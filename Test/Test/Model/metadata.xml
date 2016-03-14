@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configuration Version="1.0.0.0" Name="BitMobile3">
+	<GlobalParameters/>
+	<Entities>
+		<Entity Schema="Document" Name="Photos" SyncUpload="True" SyncDownload="False" SyncFilter="T.[SR] = @UserId AND T.[Date] > (getDate() - 90)">
+			<Fields>
+				<Field Name="Posted" AllowNull="true" Type="Boolean"/>
+				<Field Name="Id" Type="Guid" KeyField="true"/>
+				<Field Name="DeletionMark" AllowNull="true" Type="Boolean"/>
+				<Field Name="Date" AllowNull="false" Type="DateTime2"/>
+        <Field Name="FileName" AllowNull="true" Type="String" Length="250"/>
+        <Field Name="Link" AllowNull="true" Type="String" Length="250"/>
+			</Fields>
+			<TabularSections>
+			</TabularSections>
+		</Entity>
+	</Entities>
+	<Constants>
+	</Constants>
+</Configuration>

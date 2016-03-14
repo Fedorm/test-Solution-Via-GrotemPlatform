@@ -1,0 +1,46 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="C:\Example\SDK\BitMobileSDK\BitMobileSDK.exe" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="BitMobileSDK.CodeGeneration.Model" #>
+<#@ include file="ModelHelper.ttinclude"#>
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+<#
+	var ns = Host.ResolveParameterValue("dummy", "dummy", "projectDefaultNamespace");
+
+	String fileName = Host.ResolvePath("metadata.xml");
+
+	Config cf = new ModelFactory().GetConfig(fileName);
+
+	var entities = cf.EntitiesBySchema["Document"];
+	foreach (Entity entity in entities)
+	{
+		manager.StartNewFile(String.Format("{0}.{1}.cs", entity.Schema, entity.Name));
+	#>
+using System;
+
+namespace <#= ns #>.Model.<#= entity.Schema #>
+{
+	public class <#= entity.Name #> : BitMobile.DbEngine.DbObject
+	{
+		public <#= entity.Name #>()
+		{
+		}
+
+		<#
+		foreach(Field f in entity.Fields)
+        {
+		#>
+	public <#= f.DataType #> <#= f.Name #> { get; set; }
+		<#
+        }
+		#>
+	}
+}
+	<#
+	}
+#>
+<# manager.Process(true); #>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess>
+  <Workflow Name="Main">
+    
+    <Step Name="Screen1" Controller="MainScreen" StyleSheet="Style\main.css">
+      <Action Name="Forward" NextStep="Screen2"></Action>
+    </Step>
+    
+    <Step Name="Screen2" Controller="SecondScreen" StyleSheet="Style\main.css">
+      <Action Name="Forward" NextStep="Screen1"></Action>
+    </Step>
+  
+    
+      
+
+  
+
+    <Step Name="TestStep" Controller="MainScreen" StyleSheet="Style\main.css">
+      <Action Name="Button" NextStep="Screen3"></Action>
+    </Step>
+
+    <Step Name="Screen3" Controller="ThirdScreen" StyleSheet="Style\main.css">
+      <Action Name="Button" NextStep="TestStep"></Action>
+    </Step>
+    
+
+  </Workflow>
+
+  
+
+</BusinessProcess>
