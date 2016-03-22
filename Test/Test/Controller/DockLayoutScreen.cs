@@ -22,7 +22,7 @@ namespace Test
             dl = new DockLayout();
             dl.Id = "ID Of DockLayout";
             dl.OnClick += dl_OnClick;
-
+            dl.AddChild(new Button("Back", Back_OnClick));
             AddChild(dl);
             //vl.AddChild(new Button("Change Visibility Of DL", ChangeVisibilityOfDL_OnClick));
             //vl.AddChild(new Button("Back", Back_OnClick));

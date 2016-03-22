@@ -21,6 +21,7 @@ namespace Test
         {
             Button btn = (Button) sender;
             DConsole.WriteLine(btn.Text);
+            BusinessProcess.DoBack();
         }
 
 
