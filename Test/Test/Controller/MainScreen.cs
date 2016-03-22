@@ -27,7 +27,7 @@ namespace Test
             vl.AddChild(new Button("Make Yandex Photos", YandexScreen_OnClick));
             vl.AddChild(new Button("Web Request", MakeWebRequest_OnClick));
             vl.AddChild(new Button("Exit", ExitButton_OnClick));
-       
+
             AddChild(vl);
         }
 
@@ -72,7 +72,6 @@ namespace Test
 
         private void ImageScreen_OnClick(object sender, EventArgs e)
         {
-            
             BusinessProcess.DoAction("ImageScreen");
         }
 
@@ -95,7 +94,5 @@ namespace Test
         {
             Application.Terminate();
         }
-
-       
     }
 }

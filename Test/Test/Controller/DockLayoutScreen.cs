@@ -6,8 +6,8 @@ namespace Test
 {
     public class DockLayoutScreen : Screen
     {
-        private DockLayout dl;
-        private TextView textView;
+        private DockLayout _dl;
+        //private TextView _textView;
 
         public override void OnLoading()
         {
@@ -19,22 +19,22 @@ namespace Test
             //var vl = new VerticalLayout();
             //AddChild(vl);
 
-            dl = new DockLayout();
-            dl.Id = "ID Of DockLayout";
-            dl.OnClick += dl_OnClick;
-            dl.AddChild(new Button("Back", Back_OnClick));
-            AddChild(dl);
+            _dl = new DockLayout();
+            _dl.Id = "ID Of DockLayout";
+            _dl.OnClick += dl_OnClick;
+            _dl.AddChild(new Button("Back", Back_OnClick));
+            AddChild(_dl);
             //vl.AddChild(new Button("Change Visibility Of DL", ChangeVisibilityOfDL_OnClick));
             //vl.AddChild(new Button("Back", Back_OnClick));
-            //vl.AddChild(dl);
+            //vl.AddChild(_dl);
 
-            //dl.AddChild(new TextView("ALLOHA DL"));
-            //dl.AddChild(new TextView("ALLOHA DL2"));
+            //_dl.AddChild(new TextView("ALLOHA DL"));
+            //_dl.AddChild(new TextView("ALLOHA DL2"));
 
             //отображается только две текствьюхи
 
-            //dl.AddChild(new TextView("ALLOHA DL3"));
-            //dl.AddChild(new TextView("ALLOHA DL4"));
+            //_dl.AddChild(new TextView("ALLOHA DL3"));
+            //_dl.AddChild(new TextView("ALLOHA DL4"));
         }
 
         private void Back_OnClick(object sender, EventArgs e)
@@ -49,17 +49,17 @@ namespace Test
             dl.Refresh();
         }
 
-        private void ChangeVisibilityOfDL_OnClick(object sender, EventArgs e)
-        {
-            if (dl.Visible)
-            {
-                dl.Visible = false;
-                DConsole.WriteLine(string.Format(dl.Id));
-            }
-            else if (dl.Visible == false)
-            {
-                dl.Visible = true;
-            }
-        }
+        //private void ChangeVisibilityOfDL_OnClick(object sender, EventArgs e)
+        //{
+        //    if (_dl.Visible)
+        //    {
+        //        _dl.Visible = false;
+        //        DConsole.WriteLine(string.Format(_dl.Id));
+        //    }
+        //    else if (_dl.Visible == false)
+        //    {
+        //        _dl.Visible = true;
+        //    }
     }
 }
+

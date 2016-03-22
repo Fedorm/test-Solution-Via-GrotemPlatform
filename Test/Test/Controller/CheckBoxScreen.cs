@@ -6,11 +6,11 @@ namespace Test
 {
     public class CheckBoxScreen : Screen
     {
-        private Button changeCssButton;
-        private CheckBox checkBoxFalse;
-        private CheckBox checkBoxTrue;
-        private CheckBox cssCheckBox;
-        private CheckBox invisibleCheckBox;
+        private Button _changeCssButton;
+        private CheckBox _checkBoxFalse;
+        private CheckBox _checkBoxTrue;
+        private CheckBox _cssCheckBox;
+        private CheckBox _invisibleCheckBox;
 
         public override void OnLoading()
         {
@@ -22,49 +22,49 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            checkBoxTrue = new CheckBox();
-            checkBoxTrue.Visible = true;
-            checkBoxTrue.CssClass = "CheckBox";
-            checkBoxTrue.Checked = true;
+            _checkBoxTrue = new CheckBox();
+            _checkBoxTrue.Visible = true;
+            _checkBoxTrue.CssClass = "CheckBox";
+            _checkBoxTrue.Checked = true;
 
-            checkBoxFalse = new CheckBox();
-            checkBoxFalse.Visible = true;
-            checkBoxFalse.CssClass = "CheckBox";
-            checkBoxFalse.Checked = false;
+            _checkBoxFalse = new CheckBox();
+            _checkBoxFalse.Visible = true;
+            _checkBoxFalse.CssClass = "CheckBox";
+            _checkBoxFalse.Checked = false;
 
-            cssCheckBox = new CheckBox();
-            cssCheckBox.CssClass = "CheckBox";
-            cssCheckBox.Id = "Id Of Css CheckBox";
+            _cssCheckBox = new CheckBox();
+            _cssCheckBox.CssClass = "CheckBox";
+            _cssCheckBox.Id = "Id Of Css CheckBox";
 
-            changeCssButton = new Button();
-            changeCssButton.CssClass = "CssButton";
-            changeCssButton.Text = "ChangeCssOfCheckBox";
-            changeCssButton.OnClick += ChangeCssCheckBox_OnClick;
+            _changeCssButton = new Button();
+            _changeCssButton.CssClass = "CssButton";
+            _changeCssButton.Text = "ChangeCssOfCheckBox";
+            _changeCssButton.OnClick += ChangeCssCheckBox_OnClick;
 
-            invisibleCheckBox = new CheckBox();
-            invisibleCheckBox.CssClass = "CheckBox";
-            invisibleCheckBox.Visible = false;
+            _invisibleCheckBox = new CheckBox();
+            _invisibleCheckBox.CssClass = "CheckBox";
+            _invisibleCheckBox.Visible = false;
 
-            vl.AddChild(checkBoxTrue);
-            vl.AddChild(checkBoxFalse);
-            vl.AddChild(changeCssButton);
-            vl.AddChild(cssCheckBox);
+            vl.AddChild(_checkBoxTrue);
+            vl.AddChild(_checkBoxFalse);
+            vl.AddChild(_changeCssButton);
+            vl.AddChild(_cssCheckBox);
             vl.AddChild(new Button("Unhide CheckBox", Visible_OnClick));
-            vl.AddChild(invisibleCheckBox);
+            vl.AddChild(_invisibleCheckBox);
             vl.AddChild(new Button("Change Check Status", ChangeCheckStatus_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibleCheckBox.Visible)
+            if (_invisibleCheckBox.Visible)
             {
-                invisibleCheckBox.Visible = false;
-                DConsole.WriteLine(string.Format(cssCheckBox.Id));
+                _invisibleCheckBox.Visible = false;
+                DConsole.WriteLine(string.Format(_cssCheckBox.Id));
             }
-            else if (invisibleCheckBox.Visible == false)
+            else if (_invisibleCheckBox.Visible == false)
             {
-                invisibleCheckBox.Visible = true;
+                _invisibleCheckBox.Visible = true;
             }
         }
 
@@ -75,33 +75,33 @@ namespace Test
 
         private void ChangeCssCheckBox_OnClick(object sender, EventArgs e)
         {
-            if (cssCheckBox.CssClass == "CheckBox")
+            if (_cssCheckBox.CssClass == "CheckBox")
             {
-                cssCheckBox.CssClass = "CssCheckBox";
-                cssCheckBox.Refresh();
+                _cssCheckBox.CssClass = "CssCheckBox";
+                _cssCheckBox.Refresh();
             }
-            else if (cssCheckBox.CssClass == "CssCheckBox")
+            else if (_cssCheckBox.CssClass == "CssCheckBox")
             {
-                cssCheckBox.CssClass = "CheckBox";
-                cssCheckBox.Refresh();
+                _cssCheckBox.CssClass = "CheckBox";
+                _cssCheckBox.Refresh();
             }
         }
 
         private void ChangeCheckStatus_OnClick(object sender, EventArgs e)
         {
-            if (checkBoxTrue.Checked == false)
+            if (_checkBoxTrue.Checked == false)
             {
-                checkBoxTrue.Checked = true;
-                checkBoxFalse.Checked = true;
-                cssCheckBox.Checked = true;
-                invisibleCheckBox.Checked = true;
+                _checkBoxTrue.Checked = true;
+                _checkBoxFalse.Checked = true;
+                _cssCheckBox.Checked = true;
+                _invisibleCheckBox.Checked = true;
             }
-            else if (checkBoxTrue.Checked)
+            else if (_checkBoxTrue.Checked)
             {
-                checkBoxTrue.Checked = false;
-                checkBoxFalse.Checked = false;
-                cssCheckBox.Checked = false;
-                invisibleCheckBox.Checked = false;
+                _checkBoxTrue.Checked = false;
+                _checkBoxFalse.Checked = false;
+                _cssCheckBox.Checked = false;
+                _invisibleCheckBox.Checked = false;
             }
         }
     }

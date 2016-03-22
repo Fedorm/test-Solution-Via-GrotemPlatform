@@ -6,54 +6,48 @@ namespace Test
 {
     public class ButtonScreen : Screen
     {
-        private Button cssButton;
-        private Button invisibleButton;
-        private Button newButton;
-        private VerticalLayout vl;
+        private Button _cssButton;
+        private Button _invisibleButton;
+        private VerticalLayout _vl;
 
         public override void OnLoading()
         {
-
             Initialize();
         }
 
         private void Initialize()
         {
-            vl = new VerticalLayout();
-            AddChild(vl);
+            _vl = new VerticalLayout();
+            AddChild(_vl);
 
-            invisibleButton = new Button {Text = "HIDE ME", Visible = false};
-            invisibleButton.OnClick += Visible_OnClick;
+            _invisibleButton = new Button {Text = "HIDE ME", Visible = false};
+            _invisibleButton.OnClick += Visible_OnClick;
 
-            cssButton = new Button();
-            cssButton.CssClass = "CssButton";
-            cssButton.Text = "CssButton";
-            cssButton.OnClick += ChangeCssAndText_OnClick;
-            cssButton.Id = "Id Of Invisible Button";
+            _cssButton = new Button();
+            _cssButton.CssClass = "CssButton";
+            _cssButton.Text = "CssButton";
+            _cssButton.OnClick += ChangeCssAndText_OnClick;
+            _cssButton.Id = "Id Of Invisible Button";
 
-            vl.AddChild(new Button("Unhide Button", Visible_OnClick));
+            _vl.AddChild(new Button("Unhide Button", Visible_OnClick));
 
-            vl.AddChild(invisibleButton);
-            vl.AddChild(cssButton);
-            vl.AddChild(new Button("Back", Back_OnClick));
+            _vl.AddChild(_invisibleButton);
+            _vl.AddChild(_cssButton);
+            _vl.AddChild(new Button("Back", Back_OnClick));
         }
-
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibleButton.Visible)
+            if (_invisibleButton.Visible)
             {
-                invisibleButton.Visible = false;
-                DConsole.WriteLine(string.Format(cssButton.Id));
+                _invisibleButton.Visible = false;
+                DConsole.WriteLine(string.Format(_cssButton.Id));
             }
-            else if (invisibleButton.Visible == false)
+            else if (_invisibleButton.Visible == false)
             {
-                invisibleButton.Visible = true;
+                _invisibleButton.Visible = true;
             }
         }
-
-
-
 
         private void Back_OnClick(object sender, EventArgs e)
         {
@@ -62,17 +56,17 @@ namespace Test
 
         private void ChangeCssAndText_OnClick(object sender, EventArgs e)
         {
-            if (cssButton.CssClass == "CssButton")
+            if (_cssButton.CssClass == "CssButton")
             {
-                cssButton.CssClass = "ChangeCssButton";
-                cssButton.Text = "ChangeCss";
-                cssButton.Refresh();
+                _cssButton.CssClass = "ChangeCssButton";
+                _cssButton.Text = "ChangeCss";
+                _cssButton.Refresh();
             }
-            else if (cssButton.CssClass == "ChangeCssButton")
+            else if (_cssButton.CssClass == "ChangeCssButton")
             {
-                cssButton.CssClass = "CssButton";
-                cssButton.Text = "CssButton";
-                cssButton.Refresh();
+                _cssButton.CssClass = "CssButton";
+                _cssButton.Text = "CssButton";
+                _cssButton.Refresh();
             }
         }
     }

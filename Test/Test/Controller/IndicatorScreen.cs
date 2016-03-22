@@ -6,8 +6,8 @@ namespace Test
 {
     public class IndicatorScreen : Screen
     {
-        private Indicator cssIndicator;
-        private Indicator invisibleIndicator;
+        private Indicator _cssIndicator;
+        private Indicator _invisibleIndicator;
 
         public override void OnLoading()
         {
@@ -19,18 +19,18 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            invisibleIndicator = new Indicator();
-            invisibleIndicator.CssClass = "Indicator";
+            _invisibleIndicator = new Indicator();
+            _invisibleIndicator.CssClass = "Indicator";
 
-            cssIndicator = new Indicator();
-            cssIndicator.CssClass = "Indicator";
-            cssIndicator.Visible = true;
-            cssIndicator.Id = "ID Of Css Indicator";
+            _cssIndicator = new Indicator();
+            _cssIndicator.CssClass = "Indicator";
+            _cssIndicator.Visible = true;
+            _cssIndicator.Id = "ID Of Css Indicator";
 
-            vl.AddChild(new Button("Hide invisibleIndicator", Visible_OnClick));
-            vl.AddChild(invisibleIndicator);
+            vl.AddChild(new Button("Hide _invisibleIndicator", Visible_OnClick));
+            vl.AddChild(_invisibleIndicator);
             vl.AddChild(new Button("Change Css Of Indicator", ChangeCssIndicator_OnClick));
-            vl.AddChild(cssIndicator);
+            vl.AddChild(_cssIndicator);
             vl.AddChild(new Button("Start Indicators", Start_OnClick));
             vl.AddChild(new Button("Stop Indicators", Stop_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
@@ -43,43 +43,43 @@ namespace Test
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibleIndicator.Visible)
+            if (_invisibleIndicator.Visible)
             {
-                invisibleIndicator.Visible = false;
-                DConsole.WriteLine(string.Format(cssIndicator.Id));
+                _invisibleIndicator.Visible = false;
+                DConsole.WriteLine(string.Format(_cssIndicator.Id));
             }
-            else if (invisibleIndicator.Visible == false)
+            else if (_invisibleIndicator.Visible == false)
             {
-                invisibleIndicator.Visible = true;
+                _invisibleIndicator.Visible = true;
             }
         }
 
         private void ChangeCssIndicator_OnClick(object sender, EventArgs e)
         {
-            if (cssIndicator.CssClass == "Indicator")
+            if (_cssIndicator.CssClass == "Indicator")
             {
-                cssIndicator.CssClass = "CssIndicator";
+                _cssIndicator.CssClass = "CssIndicator";
 
-                cssIndicator.Refresh();
+                _cssIndicator.Refresh();
             }
-            else if (cssIndicator.CssClass == "CssIndicator")
+            else if (_cssIndicator.CssClass == "CssIndicator")
             {
-                cssIndicator.CssClass = "Indicator";
+                _cssIndicator.CssClass = "Indicator";
 
-                cssIndicator.Refresh();
+                _cssIndicator.Refresh();
             }
         }
 
         private void Start_OnClick(object sender, EventArgs e)
         {
-            invisibleIndicator.Start();
-            cssIndicator.Start();
+            _invisibleIndicator.Start();
+            _cssIndicator.Start();
         }
 
         private void Stop_OnClick(object sender, EventArgs e)
         {
-            cssIndicator.Stop();
-            invisibleIndicator.Stop();
+            _cssIndicator.Stop();
+            _invisibleIndicator.Stop();
         }
     }
 }

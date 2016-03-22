@@ -6,8 +6,8 @@ namespace Test
 {
     public class VerticalLayoutScreen : Screen
     {
-        private TextView textView;
-        private VerticalLayout vl2;
+        private TextView _textView;
+        private VerticalLayout _vl2;
 
         public override void OnLoading()
         {
@@ -19,21 +19,21 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            vl2 = new VerticalLayout();
-            vl2.CssClass = "vl";
-            vl2.OnClick += Vl2_OnClick;
-            vl2.Id = "ID Of Second Vertical Layout";
+            _vl2 = new VerticalLayout();
+            _vl2.CssClass = "vl";
+            _vl2.OnClick += Vl2_OnClick;
+            _vl2.Id = "ID Of Second Vertical Layout";
 
-            textView = new TextView();
-            textView.Text = "В онклик лейаута задана функция DoBack";
-            textView.CssClass = "CssTextView";
+            _textView = new TextView();
+            _textView.Text = "В онклик лейаута задана функция DoBack";
+            _textView.CssClass = "CssTextView";
 
             vl.AddChild(new Button("Change Visibility Of VL2", ChangeVisibilityOfVL2_OnClick));
             vl.AddChild(new Button("Change CSS Of VL2", ChangeCSSofVL2_OnClick));
-            vl.AddChild(textView);
+            vl.AddChild(_textView);
             vl.AddChild(new Button("Back", Back_OnClick));
-            vl.AddChild(vl2);
-            vl2.AddChild(new TextView("ALLOHA VL2"));
+            vl.AddChild(_vl2);
+            _vl2.AddChild(new TextView("ALLOHA VL2"));
         }
 
         private void Back_OnClick(object sender, EventArgs e)
@@ -48,28 +48,28 @@ namespace Test
 
         private void ChangeVisibilityOfVL2_OnClick(object sender, EventArgs e)
         {
-            if (vl2.Visible)
+            if (_vl2.Visible)
             {
-                vl2.Visible = false;
-                DConsole.WriteLine(string.Format(vl2.Id));
+                _vl2.Visible = false;
+                DConsole.WriteLine(string.Format(_vl2.Id));
             }
-            else if (vl2.Visible == false)
+            else if (_vl2.Visible == false)
             {
-                vl2.Visible = true;
+                _vl2.Visible = true;
             }
         }
 
         private void ChangeCSSofVL2_OnClick(object sender, EventArgs e)
         {
-            if (vl2.CssClass == "vl")
+            if (_vl2.CssClass == "vl")
             {
-                vl2.CssClass = "CssVerticalLayout";
-                vl2.Refresh();
+                _vl2.CssClass = "CssVerticalLayout";
+                _vl2.Refresh();
             }
-            else if (vl2.CssClass == "CssVerticalLayout")
+            else if (_vl2.CssClass == "CssVerticalLayout")
             {
-                vl2.CssClass = "vl";
-                vl2.Refresh();
+                _vl2.CssClass = "vl";
+                _vl2.Refresh();
             }
         }
     }

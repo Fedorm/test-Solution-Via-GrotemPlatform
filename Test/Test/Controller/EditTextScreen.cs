@@ -6,11 +6,11 @@ namespace Test
 {
     public class EditTextScreen : Screen
     {
-        private EditText cssEditText;
-        private EditText invisibeEditText;
-        private EditText notEnabledEditText;
-        private EditText placeholderEditText;
-        private EditText textEditText;
+        private EditText _cssEditText;
+        private EditText _invisibeEditText;
+        private EditText _notEnabledEditText;
+        private EditText _placeholderEditText;
+        private EditText _textEditText;
 
 
         public override void OnLoading()
@@ -23,98 +23,98 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            invisibeEditText = new EditText();
-            invisibeEditText.CssClass = "EditText";
-            invisibeEditText.Visible = true;
-            invisibeEditText.Text = "PLEASE HIDE ME";
+            _invisibeEditText = new EditText();
+            _invisibeEditText.CssClass = "EditText";
+            _invisibeEditText.Visible = true;
+            _invisibeEditText.Text = "PLEASE HIDE ME";
 
-            cssEditText = new EditText();
-            cssEditText.CssClass = "EditText";
-            cssEditText.Text = "CHANGE MY CSS";
-            cssEditText.Id = "ID Of Css EditText";
+            _cssEditText = new EditText();
+            _cssEditText.CssClass = "EditText";
+            _cssEditText.Text = "CHANGE MY CSS";
+            _cssEditText.Id = "ID Of Css EditText";
 
-            textEditText = new EditText();
-            textEditText.CssClass = "EditText";
-            textEditText.Text = "PLEASE CHANGE MY TEXT";
-//            textEditText.Length = 2;
-//            textEditText.Required = true;
+            _textEditText = new EditText();
+            _textEditText.CssClass = "EditText";
+            _textEditText.Text = "PLEASE CHANGE MY TEXT";
+//            _textEditText.Length = 2;
+//            _textEditText.Required = true;
 
-            placeholderEditText = new EditText();
-            placeholderEditText.CssClass = "EditText";
-            placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+            _placeholderEditText = new EditText();
+            _placeholderEditText.CssClass = "EditText";
+            _placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
 
-            notEnabledEditText = new EditText();
-            notEnabledEditText.Text = "NOT ENABLED EDIT TEXT";
-            notEnabledEditText.Enabled = false;
-            notEnabledEditText.CssClass = "EditText";
+            _notEnabledEditText = new EditText();
+            _notEnabledEditText.Text = "NOT ENABLED EDIT TEXT";
+            _notEnabledEditText.Enabled = false;
+            _notEnabledEditText.CssClass = "EditText";
 
             vl.AddChild(new Button("Unhide Button", Visible_OnClick));
             vl.AddChild(new Button("Change CSS Of EditText", ChangeCssEditText_OnClick));
             vl.AddChild(new Button("Change Text Of EditText", ChangeTextEditText_OnClick));
             vl.AddChild(new Button("Change Placeholder Of EditText", ChangePlaceholderEditText_OnClick));
             vl.AddChild(new Button("Set Focus To Css EditText", SetFocusToEditText_OnClick));
-            vl.AddChild(invisibeEditText);
-            vl.AddChild(cssEditText);
-            vl.AddChild(textEditText);
-            vl.AddChild(placeholderEditText);
-            vl.AddChild(notEnabledEditText);
+            vl.AddChild(_invisibeEditText);
+            vl.AddChild(_cssEditText);
+            vl.AddChild(_textEditText);
+            vl.AddChild(_placeholderEditText);
+            vl.AddChild(_notEnabledEditText);
             vl.AddChild(new Button("Second Edit Text Screen", SecondEditTextScreen_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
         private void SetFocusToEditText_OnClick(object sender, EventArgs e)
         {
-            cssEditText.SetFocus();
+            _cssEditText.SetFocus();
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibeEditText.Visible)
+            if (_invisibeEditText.Visible)
             {
-                invisibeEditText.Visible = false;
-                DConsole.WriteLine(string.Format(cssEditText.Id));
+                _invisibeEditText.Visible = false;
+                DConsole.WriteLine(string.Format(_cssEditText.Id));
             }
-            else if (invisibeEditText.Visible == false)
+            else if (_invisibeEditText.Visible == false)
             {
-                invisibeEditText.Visible = true;
+                _invisibeEditText.Visible = true;
             }
         }
 
         private void ChangeCssEditText_OnClick(object sender, EventArgs e)
         {
-            if (cssEditText.CssClass == "EditText")
+            if (_cssEditText.CssClass == "EditText")
             {
-                cssEditText.CssClass = "CssEditText";
-                cssEditText.Refresh();
+                _cssEditText.CssClass = "CssEditText";
+                _cssEditText.Refresh();
             }
-            else if (cssEditText.CssClass == "CssEditText")
+            else if (_cssEditText.CssClass == "CssEditText")
             {
-                cssEditText.CssClass = "EditText";
-                cssEditText.Refresh();
+                _cssEditText.CssClass = "EditText";
+                _cssEditText.Refresh();
             }
         }
 
         private void ChangeTextEditText_OnClick(object sender, EventArgs e)
         {
-            if (textEditText.Text == "PLEASE CHANGE MY TEXT")
+            if (_textEditText.Text == "PLEASE CHANGE MY TEXT")
             {
-                textEditText.Text = "!!!!!ПОМОГИТЕ!!!!!";
+                _textEditText.Text = "!!!!!ПОМОГИТЕ!!!!!";
             }
-            else if (textEditText.Text == "!!!!!ПОМОГИТЕ!!!!!")
+            else if (_textEditText.Text == "!!!!!ПОМОГИТЕ!!!!!")
             {
-                textEditText.Text = "PLEASE CHANGE MY TEXT";
+                _textEditText.Text = "PLEASE CHANGE MY TEXT";
             }
         }
 
         private void ChangePlaceholderEditText_OnClick(object sender, EventArgs e)
         {
-            if (placeholderEditText.Placeholder == "PLACEHOLDER CHANGE MY PLACEHOLDER")
+            if (_placeholderEditText.Placeholder == "PLACEHOLDER CHANGE MY PLACEHOLDER")
             {
-                placeholderEditText.Placeholder = "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ";
+                _placeholderEditText.Placeholder = "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ";
             }
-            else if (placeholderEditText.Placeholder == "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ")
+            else if (_placeholderEditText.Placeholder == "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ")
             {
-                placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+                _placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
             }
         }
 

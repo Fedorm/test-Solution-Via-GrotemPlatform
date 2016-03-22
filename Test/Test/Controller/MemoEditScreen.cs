@@ -6,11 +6,11 @@ namespace Test
 {
     public class MemoEditScreen : Screen
     {
-        private MemoEdit cssMemoEdit;
-        private MemoEdit invisibeMemoEdit;
-        private MemoEdit notEnabledMemoEdit;
-        private MemoEdit placeholderMemoEdit;
-        private MemoEdit textMemoEdit;
+        private MemoEdit _cssMemoEdit;
+        private MemoEdit _invisibeMemoEdit;
+        private MemoEdit _notEnabledMemoEdit;
+        private MemoEdit _placeholderMemoEdit;
+        private MemoEdit _textMemoEdit;
 
 
         public override void OnLoading()
@@ -23,100 +23,100 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            invisibeMemoEdit = new MemoEdit();
-            invisibeMemoEdit.CssClass = "MemoEdit";
-            invisibeMemoEdit.Visible = true;
-            invisibeMemoEdit.Text = "PLEASE HIDE ME";
+            _invisibeMemoEdit = new MemoEdit();
+            _invisibeMemoEdit.CssClass = "MemoEdit";
+            _invisibeMemoEdit.Visible = true;
+            _invisibeMemoEdit.Text = "PLEASE HIDE ME";
 
-            cssMemoEdit = new MemoEdit();
-            cssMemoEdit.CssClass = "MemoEdit";
-            cssMemoEdit.Text = "CHANGE MY CSS";
-            cssMemoEdit.Id = "ID Of Css MemoEdit";
+            _cssMemoEdit = new MemoEdit();
+            _cssMemoEdit.CssClass = "MemoEdit";
+            _cssMemoEdit.Text = "CHANGE MY CSS";
+            _cssMemoEdit.Id = "ID Of Css MemoEdit";
 
-            textMemoEdit = new MemoEdit();
-            textMemoEdit.CssClass = "MemoEdit";
-            textMemoEdit.Text = "PLEASE CHANGE MY TEXT";
+            _textMemoEdit = new MemoEdit();
+            _textMemoEdit.CssClass = "MemoEdit";
+            _textMemoEdit.Text = "PLEASE CHANGE MY TEXT";
 
-            //            textMemoEdit.AutoFocus = true;
-            //            textMemoEdit.Length = 2;
-            //            textMemoEdit.Required = true;
+            //            _textMemoEdit.AutoFocus = true;
+            //            _textMemoEdit.Length = 2;
+            //            _textMemoEdit.Required = true;
 
-            placeholderMemoEdit = new MemoEdit();
-            placeholderMemoEdit.CssClass = "MemoEdit";
-            placeholderMemoEdit.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+            _placeholderMemoEdit = new MemoEdit();
+            _placeholderMemoEdit.CssClass = "MemoEdit";
+            _placeholderMemoEdit.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
 
-            notEnabledMemoEdit = new MemoEdit();
-            notEnabledMemoEdit.Text = "NOT ENABLED MEMO EDIT";
-            notEnabledMemoEdit.Enabled = false;
-            notEnabledMemoEdit.CssClass = "MemoEdit";
+            _notEnabledMemoEdit = new MemoEdit();
+            _notEnabledMemoEdit.Text = "NOT ENABLED MEMO EDIT";
+            _notEnabledMemoEdit.Enabled = false;
+            _notEnabledMemoEdit.CssClass = "MemoEdit";
 
             vl.AddChild(new Button("Unhide Button", Visible_OnClick));
             vl.AddChild(new Button("Change CSS Of MemoEdit", ChangeCssMemoEdit_OnClick));
             vl.AddChild(new Button("Change Text Of MemoEdit", ChangeTextMemoEdit_OnClick));
             vl.AddChild(new Button("Change Placeholder Of MemoEdit", ChangePlaceholderMemoEdit_OnClick));
             vl.AddChild(new Button("Set Focus To Css MemoEdit", SetFocusToMemoEdit_OnClick));
-            vl.AddChild(invisibeMemoEdit);
-            vl.AddChild(cssMemoEdit);
-            vl.AddChild(textMemoEdit);
-            vl.AddChild(placeholderMemoEdit);
-            vl.AddChild(notEnabledMemoEdit);
+            vl.AddChild(_invisibeMemoEdit);
+            vl.AddChild(_cssMemoEdit);
+            vl.AddChild(_textMemoEdit);
+            vl.AddChild(_placeholderMemoEdit);
+            vl.AddChild(_notEnabledMemoEdit);
             vl.AddChild(new Button("Second MemoEdit Screen", SecondMemoEditScreen_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
         private void SetFocusToMemoEdit_OnClick(object sender, EventArgs e)
         {
-            cssMemoEdit.SetFocus();
+            _cssMemoEdit.SetFocus();
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibeMemoEdit.Visible)
+            if (_invisibeMemoEdit.Visible)
             {
-                invisibeMemoEdit.Visible = false;
-                DConsole.WriteLine(string.Format(cssMemoEdit.Id));
+                _invisibeMemoEdit.Visible = false;
+                DConsole.WriteLine(string.Format(_cssMemoEdit.Id));
             }
-            else if (invisibeMemoEdit.Visible == false)
+            else if (_invisibeMemoEdit.Visible == false)
             {
-                invisibeMemoEdit.Visible = true;
+                _invisibeMemoEdit.Visible = true;
             }
         }
 
         private void ChangeCssMemoEdit_OnClick(object sender, EventArgs e)
         {
-            if (cssMemoEdit.CssClass == "MemoEdit")
+            if (_cssMemoEdit.CssClass == "MemoEdit")
             {
-                cssMemoEdit.CssClass = "CssMemoEdit";
-                cssMemoEdit.Refresh();
+                _cssMemoEdit.CssClass = "CssMemoEdit";
+                _cssMemoEdit.Refresh();
             }
-            else if (cssMemoEdit.CssClass == "CssMemoEdit")
+            else if (_cssMemoEdit.CssClass == "CssMemoEdit")
             {
-                cssMemoEdit.CssClass = "MemoEdit";
-                cssMemoEdit.Refresh();
+                _cssMemoEdit.CssClass = "MemoEdit";
+                _cssMemoEdit.Refresh();
             }
         }
 
         private void ChangeTextMemoEdit_OnClick(object sender, EventArgs e)
         {
-            if (textMemoEdit.Text == "PLEASE CHANGE MY TEXT")
+            if (_textMemoEdit.Text == "PLEASE CHANGE MY TEXT")
             {
-                textMemoEdit.Text = "!!!!!ПОМОГИТЕ!!!!!";
+                _textMemoEdit.Text = "!!!!!ПОМОГИТЕ!!!!!";
             }
-            else if (textMemoEdit.Text == "!!!!!ПОМОГИТЕ!!!!!")
+            else if (_textMemoEdit.Text == "!!!!!ПОМОГИТЕ!!!!!")
             {
-                textMemoEdit.Text = "PLEASE CHANGE MY TEXT";
+                _textMemoEdit.Text = "PLEASE CHANGE MY TEXT";
             }
         }
 
         private void ChangePlaceholderMemoEdit_OnClick(object sender, EventArgs e)
         {
-            if (placeholderMemoEdit.Placeholder == "PLACEHOLDER CHANGE MY PLACEHOLDER")
+            if (_placeholderMemoEdit.Placeholder == "PLACEHOLDER CHANGE MY PLACEHOLDER")
             {
-                placeholderMemoEdit.Placeholder = "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ";
+                _placeholderMemoEdit.Placeholder = "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ";
             }
-            else if (placeholderMemoEdit.Placeholder == "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ")
+            else if (_placeholderMemoEdit.Placeholder == "ГОСУДАРСТВЕННЫЙ СЛУЖАЩИЙ")
             {
-                placeholderMemoEdit.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+                _placeholderMemoEdit.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
             }
         }
 

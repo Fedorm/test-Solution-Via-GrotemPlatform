@@ -6,7 +6,7 @@ namespace Test
 {
     public class ImageScreen : Screen
     {
-        private Image image;
+        private Image _image;
         //private Image poleviImage;
 
         public override void OnLoading()
@@ -19,10 +19,10 @@ namespace Test
             var vl = new VerticalLayout();
 
 
-            image = new Image();
-            image.Source = "Image\\cats.jpg";
-            image.CssClass = "Image";
-            image.Id = "ID Of Image";
+            _image = new Image();
+            _image.Source = "Image\\cats.jpg";
+            _image.CssClass = "Image";
+            _image.Id = "ID Of Image";
 
             //poleviImage = new Image();
             //poleviImage.CssClass = "cats";
@@ -30,7 +30,7 @@ namespace Test
             vl.AddChild(new Button("INVISIBLE IMAGE", Visible_OnClick));
             vl.AddChild(new Button("Change CSS Image", ChangeCssImage_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
-            vl.AddChild(image);
+            vl.AddChild(_image);
             //vl.AddChild(poleviImage);
             //vl.OnClick += vl_OnClick;
 
@@ -39,14 +39,14 @@ namespace Test
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (image.Visible)
+            if (_image.Visible)
             {
-                image.Visible = false;
-                DConsole.WriteLine(string.Format(image.Id));
+                _image.Visible = false;
+                DConsole.WriteLine(string.Format(_image.Id));
             }
-            else if (image.Visible == false)
+            else if (_image.Visible == false)
             {
-                image.Visible = true;
+                _image.Visible = true;
             }
         }
 
@@ -57,15 +57,15 @@ namespace Test
 
         private void ChangeCssImage_OnClick(object sender, EventArgs e)
         {
-            if (image.CssClass == "Image")
+            if (_image.CssClass == "Image")
             {
-                image.CssClass = "CssImage";
-                image.Refresh();
+                _image.CssClass = "CssImage";
+                _image.Refresh();
             }
-            else if (image.CssClass == "CssImage")
+            else if (_image.CssClass == "CssImage")
             {
-                image.CssClass = "Image";
-                image.Refresh();
+                _image.CssClass = "Image";
+                _image.Refresh();
             }
         }
 
