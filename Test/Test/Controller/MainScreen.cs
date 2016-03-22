@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;
 using System.Net;
+using System.Text;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 
@@ -8,72 +8,94 @@ namespace Test
 {
     public class MainScreen : Screen
     {
-        Button syncButton;
-
         public override void OnLoading()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             var vl = new VerticalLayout();
-
-            syncButton = new Button();
-            syncButton.OnClick += SyncButton_OnClick;
-
-            vl.AddChild(syncButton);
-            vl.AddChild(new Button("Make new photo", MakePhotoButton_OnClick));
+            vl.AddChild(new Button("Buttons", ButtonScreen_OnClick));
+            vl.AddChild(new Button("CheckBox", CheckBoxScreen_OnClick));
+            vl.AddChild(new Button("HorizontalLine And TextView", SomeControlsScreen_OnClick));
+            vl.AddChild(new Button("Layouts", LayoutScreen_OnClick));
+            vl.AddChild(new Button("Image", ImageScreen_OnClick));
+            vl.AddChild(new Button("EditText", EditTextScreen_OnClick));
+            vl.AddChild(new Button("MemoEdit", MemoEditScreen_OnClick));
+            vl.AddChild(new Button("Indicator", IndicatorScreen_OnClick));
+            vl.AddChild(new Button("Make Yandex Photos", YandexScreen_OnClick));
             vl.AddChild(new Button("Web Request", MakeWebRequest_OnClick));
             vl.AddChild(new Button("Exit", ExitButton_OnClick));
-            vl.AddChild(new Button("TestThirdScreen", TestThirdScreenButton_OnClick));
+       
             AddChild(vl);
         }
 
-        public override void OnShow()
+        private void YandexScreen_OnClick(object sender, EventArgs e)
         {
-            UpdateSyncButton();
+            BusinessProcess.DoAction("YandexScreen");
         }
 
-        private void UpdateSyncButton()
+        private void MakeWebRequest_OnClick(object sender, EventArgs e)
         {
-            syncButton.Text = String.Format("Sync {0} photos", DB.GetCountOfUnsyncedPhotos());
-        }
-
-        void SyncButton_OnClick(object sender, EventArgs e)
-        {
-            YandexPhoto.SyncPhotos();
-            UpdateSyncButton();
-        }
-
-        void MakePhotoButton_OnClick(object sender, EventArgs e)
-        {
-            BusinessProcess.DoAction("Forward");
-        }
-
-
-        void MakeWebRequest_OnClick(object sender, EventArgs e)
-        {
-
-            WebRequest req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
-            DConsole.WriteLine(String.Format("Web Request Created"));
-            string svcCredentials =
+            var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
+            DConsole.WriteLine("Web Request Created");
+            var svcCredentials =
                 Convert.ToBase64String(Encoding.ASCII.GetBytes("fm" + ":" + "fm"));
             req.Headers.Add("Authorization", "Basic " + svcCredentials);
-
-            DConsole.WriteLine(String.Format("Headers added"));
-
-            using (WebResponse resp = req.GetResponse()) { }
-
-            DConsole.WriteLine(String.Format("The response is received"));
-
-
+            DConsole.WriteLine("Headers added");
+            using (var resp = req.GetResponse())
+            {
+            }
+            DConsole.WriteLine("The response is received");
         }
 
-        void ExitButton_OnClick(object sender, EventArgs e)
+        private void ButtonScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("ButtonScreen");
+        }
+
+        private void CheckBoxScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("CheckBoxScreen");
+        }
+
+        private void SomeControlsScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("SomeControlsScreen");
+        }
+
+        private void LayoutScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("LayoutScreen");
+        }
+
+        private void ImageScreen_OnClick(object sender, EventArgs e)
+        {
+            
+            BusinessProcess.DoAction("ImageScreen");
+        }
+
+        private void EditTextScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("EditTextScreen");
+        }
+
+        private void MemoEditScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("MemoEditScreen");
+        }
+
+        private void IndicatorScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("IndicatorScreen");
+        }
+
+        private void ExitButton_OnClick(object sender, EventArgs e)
         {
             Application.Terminate();
         }
 
-
-        void TestThirdScreenButton_OnClick(object sender, EventArgs e)
-        {
-            BusinessProcess.DoAction("Button");
-        }
+       
     }
 }
