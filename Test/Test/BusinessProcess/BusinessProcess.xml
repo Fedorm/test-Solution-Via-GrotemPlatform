@@ -13,6 +13,7 @@
       <Action Name="EditTextScreen" NextStep="EditTextScreen"></Action>
       <Action Name="MemoEditScreen" NextStep="MemoEditScreen"></Action>
       <Action Name="IndicatorScreen" NextStep="IndicatorScreen"></Action>
+      <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -27,6 +28,7 @@
     </Step>
     <Step Name="VerticalLayoutScreen" Controller="VerticalLayoutScreen" StyleSheet="Style\main.css"> </Step>
     <Step Name="HorizontalLayoutScreen" Controller="HorizontalLayoutScreen" StyleSheet="Style\main.css">  </Step>
+    <Step Name="TestHorizontalLayoutScreen" Controller="TestHorizontalLayoutScreen" StyleSheet="Style\polev.css"></Step>
     <Step Name="DockLayoutScreen" Controller="DockLayoutScreen" StyleSheet="Style\main.css">  </Step>
     <Step Name="ImageScreen" Controller="ImageScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="EditTextScreen" Controller="EditTextScreen" StyleSheet="Style\main.css">
@@ -38,7 +40,7 @@
     <Step Name="SecondEditTextScreen" Controller="SecondEditTextScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="SecondMemoEditScreen" Controller="SecondMemoEditScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="IndicatorScreen" Controller="IndicatorScreen" StyleSheet="Style\main.css"></Step>
-    <Step Name="TestHorizontalLayoutScreen" Controller="TestHorizontalLayoutScreen" StyleSheet="Style\polev.css"></Step>
+    <Step Name="MediaPlayerScreen" Controller="MediaPlayerScreen" StyleSheet="Style\main.css"></Step>
   
 
   </Workflow>

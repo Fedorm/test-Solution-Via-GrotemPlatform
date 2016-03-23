@@ -63,6 +63,7 @@
     <Compile Include="Controller\ImageScreen.cs" />
     <Compile Include="Controller\IndicatorScreen.cs" />
     <Compile Include="Controller\LayoutScreen.cs" />
+    <Compile Include="Controller\MediaPlayerScreen.cs" />
     <Compile Include="Controller\MemoEditScreen.cs" />
     <Compile Include="Controller\SecondEditTextScreen.cs" />
     <Compile Include="Controller\SecondMemoEditScreen.cs" />
@@ -110,6 +111,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Style\second.css" />
     <EmbeddedResource Include="Style\polev.css" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Image\clip.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

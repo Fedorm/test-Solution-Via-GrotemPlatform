@@ -221,3 +221,8 @@ width:50%;
 .cats {
      width:50%; height:50%; margin-left:25%; margin-top:25%; background-color:#00ff00;
 }
+
+.MediaPlayer {
+    width: 100%;
+    height: 100%;
+}

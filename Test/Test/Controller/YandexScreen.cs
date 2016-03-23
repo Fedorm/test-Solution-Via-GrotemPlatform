@@ -1,21 +1,22 @@
 ﻿using System;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
+using Test.Model.Document;
 
 namespace Test
 {
     public class YandexScreen : Screen
     {
-        Button syncButton;
+        private Button _syncButton;
 
         public override void OnLoading()
         {
             var vl = new VerticalLayout();
             AddChild(vl);
-            syncButton = new Button();
-            syncButton.OnClick += SyncButton_OnClick;
+            _syncButton = new Button();
+            _syncButton.OnClick += SyncButton_OnClick;
 
-            vl.AddChild(syncButton);
+            vl.AddChild(_syncButton);
             var btn = new Button();
             btn.Text = "Make snapshot";
             btn.OnClick += btn_OnClick;
@@ -32,7 +33,7 @@ namespace Test
 
         private void UpdateSyncButton()
         {
-            syncButton.Text = string.Format("Sync {0} yandex photos", DB.GetCountOfUnsyncedPhotos());
+            _syncButton.Text = string.Format("Sync {0} yandex photos", DB.GetCountOfUnsyncedPhotos());
         }
 
         private void SyncButton_OnClick(object sender, EventArgs e)
@@ -43,15 +44,16 @@ namespace Test
 
         private void btn_OnClick(object sender, EventArgs e)
         {
-            Guid id = Guid.NewGuid();
-            String fileName = string.Format("shared/{0}", id);
+            var id = Guid.NewGuid();
+            var fileName = string.Format("shared/{0}", id);
             Camera.MakeSnapshot(fileName, 500,
-                delegate (object sender2, EventArgs e2)
+                delegate
                 {
-                    Test.Model.Document.Photos photo = new Model.Document.Photos();
+                    var photo = new Photos();
                     photo.Id = id;
                     photo.FileName = fileName;
                     photo.Save();
+                    UpdateSyncButton();
                 }
                 );
         }
