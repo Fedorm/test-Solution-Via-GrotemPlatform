@@ -70,6 +70,10 @@
     <Compile Include="Controller\SomeControlsScreen.cs" />
     <Compile Include="Controller\TestHorizontalLayoutScreen.cs" />
     <Compile Include="Controller\VerticalLayoutScreen.cs" />
+    <Compile Include="Controller\WebImageScreen.cs" />
+    <Compile Include="Controller\WebMapGoogleScreen.cs" />
+    <Compile Include="Controller\WebScreen.cs" />
+    <Compile Include="Controller\WebViewScreen.cs" />
     <Compile Include="Controller\YandexScreen.cs" />
     <Compile Include="Module\BusinessProcess.cs" />
     <Compile Include="Controller\MainScreen.cs" />

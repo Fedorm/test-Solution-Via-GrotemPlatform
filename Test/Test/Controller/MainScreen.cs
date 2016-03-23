@@ -35,11 +35,11 @@ namespace Test
             vl.AddChild(new Button("Make Yandex Photos", YandexScreen_OnClick));
             vl.AddChild(new Button("Web Request", MakeWebRequest_OnClick));
             vl.AddChild(new Button("Exit", ExitButton_OnClick));
-            vl2.AddChild(new Button("Exit1", ExitButton_OnClick));
-            vl2.AddChild(new Button("Exit2", ExitButton_OnClick));
-            vl2.AddChild(new Button("Exit3", ExitButton_OnClick));
+
+            vl2.AddChild(new Button("Web", WebScreen_OnClick));
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
+            vl2.AddChild(new Button("Exit", ExitButton_OnClick));
 
             _scrollView.AddChild(vl);
             _scrollView.AddChild(vl2);
@@ -114,6 +114,11 @@ namespace Test
         private void ExitButton_OnClick(object sender, EventArgs e)
         {
             Application.Terminate();
+        }
+
+        private void WebScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("WebScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)

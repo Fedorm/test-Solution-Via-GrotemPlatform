@@ -14,6 +14,7 @@
       <Action Name="MemoEditScreen" NextStep="MemoEditScreen"></Action>
       <Action Name="IndicatorScreen" NextStep="IndicatorScreen"></Action>
       <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
+      <Action Name="WebScreen" NextStep="WebScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -41,7 +42,14 @@
     <Step Name="SecondMemoEditScreen" Controller="SecondMemoEditScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="IndicatorScreen" Controller="IndicatorScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="MediaPlayerScreen" Controller="MediaPlayerScreen" StyleSheet="Style\main.css"></Step>
-  
+    <Step Name="WebScreen" Controller="WebScreen" StyleSheet="Style\main.css">
+      <Action Name="WebViewScreen" NextStep="WebViewScreen"></Action>
+      <Action Name="WebMapGoogleScreen" NextStep="WebMapGoogleScreen"></Action>
+      <Action Name="WebImageScreen" NextStep="WebImageScreen"></Action>
+    </Step>
+    <Step Name="WebViewScreen" Controller="WebViewScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="WebMapGoogleScreen" Controller="WebMapGoogleScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="WebImageScreen" Controller="WebImageScreen" StyleSheet="Style\main.css"></Step>
 
   </Workflow>
 
