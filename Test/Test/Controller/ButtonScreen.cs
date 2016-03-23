@@ -8,8 +8,8 @@ namespace Test
     {
         private Button _cssButton;
         private Button _invisibleButton;
-        private VerticalLayout _vl;
         private Button _newButton;
+        private VerticalLayout _vl;
 
         public override void OnLoading()
         {
@@ -75,9 +75,9 @@ namespace Test
         private void AddNewButton_OnClick(object sender, EventArgs e)
         {
             _newButton = new Button("My name is NewButton", Back_OnClick);
-            EditText text = new EditText();
+            var text = new EditText();
             text.Text = "New EditText";
-            Image image = new Image();
+            var image = new Image();
             image.Source = "Image\\cats.jpg";
             _vl.AddChild(_newButton);
             _vl.AddChild(text);

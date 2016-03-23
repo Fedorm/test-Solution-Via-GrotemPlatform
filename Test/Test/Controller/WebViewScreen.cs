@@ -5,24 +5,31 @@ namespace Test
 {
     public class WebViewScreen : Screen
     {
+        private WebView _webView;
+
         public override void OnLoading()
         {
             Initialize();
         }
 
-        void Initialize()
+        private void Initialize()
         {
             var vl = new VerticalLayout();
             AddChild(vl);
 
+            _webView = new WebView();
+            _webView.CssClass = "WebView";
+            _webView.Visible = true;
+            _webView.Url = "https://youtube.com";
+
+            vl.AddChild(_webView);
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
 
-        void Back_OnClick(object sender, EventArgs e)
+        private void Back_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
         }
-
     }
 }
