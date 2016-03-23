@@ -9,6 +9,7 @@ namespace Test
         private Button _cssButton;
         private Button _invisibleButton;
         private VerticalLayout _vl;
+        private Button _newButton;
 
         public override void OnLoading()
         {
@@ -33,6 +34,7 @@ namespace Test
 
             _vl.AddChild(_invisibleButton);
             _vl.AddChild(_cssButton);
+            _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
         }
 
@@ -68,6 +70,19 @@ namespace Test
                 _cssButton.Text = "CssButton";
                 _cssButton.Refresh();
             }
+        }
+
+        private void AddNewButton_OnClick(object sender, EventArgs e)
+        {
+            _newButton = new Button("My name is NewButton", Back_OnClick);
+            EditText text = new EditText();
+            text.Text = "New EditText";
+            Image image = new Image();
+            image.Source = "Image\\cats.jpg";
+            _vl.AddChild(_newButton);
+            _vl.AddChild(text);
+            _vl.AddChild(image);
+            _vl.Refresh();
         }
     }
 }
