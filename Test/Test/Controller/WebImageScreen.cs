@@ -12,22 +12,27 @@ namespace Test
             Initialize();
         }
 
-        void Initialize()
+        private void Initialize()
         {
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            _webImage=new WebImage();
+            _webImage = new WebImage();
+            _webImage.Visible = true;
+            _webImage.CssClass = "WebImage";
+            _webImage.Id = "ID Of Web Image";
+            _webImage.UrlType = "Absolute";
+            _webImage.Url = "http://goo.gl/muPIv2";
+
 
             vl.AddChild(_webImage);
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
 
-        void Back_OnClick(object sender, EventArgs e)
+        private void Back_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
         }
-
     }
 }
