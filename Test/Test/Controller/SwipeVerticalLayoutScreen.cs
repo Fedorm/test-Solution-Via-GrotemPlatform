@@ -3,10 +3,8 @@ using BitMobile.ClientModel3.UI;
 
 namespace Test
 {
-    public class WebImageScreen : Screen
+    public class SwipeVerticalLayoutScreen : Screen
     {
-        private WebImage _webImage;
-
         public override void OnLoading()
         {
             Initialize();
@@ -17,15 +15,6 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            _webImage = new WebImage();
-            _webImage.Visible = true;
-            _webImage.CssClass = "WebImage";
-            _webImage.Id = "ID Of Web Image";
-            _webImage.UrlType = "Absolute";
-            //_webImage.Url = "http://goo.gl/muPIv2";
-            _webImage.Url = "https://goo.gl/ttQ0Rb";
-
-            vl.AddChild(_webImage);
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 

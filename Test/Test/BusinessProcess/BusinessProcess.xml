@@ -15,6 +15,7 @@
       <Action Name="IndicatorScreen" NextStep="IndicatorScreen"></Action>
       <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
       <Action Name="WebScreen" NextStep="WebScreen"></Action>
+      <Action Name="SwipeScreen" NextStep="SwipeScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -50,7 +51,12 @@
     <Step Name="WebViewScreen" Controller="WebViewScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="WebMapGoogleScreen" Controller="WebMapGoogleScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="WebImageScreen" Controller="WebImageScreen" StyleSheet="Style\main.css"></Step>
-
+    <Step Name="SwipeScreen" Controller="SwipeScreen" StyleSheet="Style\main.css">
+      <Action Name="SwipeHorizontalLayoutScreen" NextStep="SwipeHorizontalLayoutScreen"></Action>
+      <Action Name="SwipeVerticalLayoutScreen" NextStep="SwipeVerticalLayoutScreen"></Action>
+    </Step>
+    <Step Name="SwipeHorizontalLayoutScreen" Controller="SwipeHorizontalLayoutScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="SwipeVerticalLayoutScreen" Controller="SwipeVerticalLayoutScreen" StyleSheet="Style\main.css"></Step>
   </Workflow>
 
 

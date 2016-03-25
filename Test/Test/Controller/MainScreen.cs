@@ -37,6 +37,7 @@ namespace Test
             vl.AddChild(new Button("Exit", ExitButton_OnClick));
 
             vl2.AddChild(new Button("Web", WebScreen_OnClick));
+            vl2.AddChild(new Button("Swipe", SwipeScreen_OnClick));
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
@@ -119,6 +120,11 @@ namespace Test
         private void WebScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("WebScreen");
+        }
+
+        private void SwipeScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("SwipeScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)

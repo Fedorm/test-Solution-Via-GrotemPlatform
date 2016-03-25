@@ -21,7 +21,7 @@ namespace Test
             _mediaPlayer.Visible = true;
             _mediaPlayer.Id = "Id Of MediaPlayer";
             _mediaPlayer.CssClass = "MediaPlayer";
-            _mediaPlayer.Path = "Image//clip.mp4";
+            _mediaPlayer.Path = "Image\\clip.mp4";
 
             vl.AddChild(new TextView("YOU CAN SEE MEDIAPLAYER IN NEXT VERSION"));
             vl.AddChild(new Button("Play", Play_OnClick));

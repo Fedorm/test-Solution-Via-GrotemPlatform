@@ -7,7 +7,7 @@ namespace Test
     public class WebMapGoogleScreen : Screen
     {
         private WebMapGoogle _webMapGoogle;
-
+        
         public override void OnLoading()
         {
             Initialize();
