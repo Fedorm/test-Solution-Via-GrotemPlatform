@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BusinessProcess\Class1.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Compile Include="Controller\ButtonScreen.cs" />
     <Compile Include="Controller\CheckBoxScreen.cs" />
     <Compile Include="Controller\DockLayoutScreen.cs" />
@@ -72,6 +75,7 @@
     <Compile Include="Controller\SwipeVerticalLayoutScreen.cs" />
     <Compile Include="Controller\SwipeScreen.cs" />
     <Compile Include="Controller\TestHorizontalLayoutScreen.cs" />
+    <Compile Include="Controller\TestXMLScreen.cs" />
     <Compile Include="Controller\VerticalLayoutScreen.cs" />
     <Compile Include="Controller\WebImageScreen.cs" />
     <Compile Include="Controller\WebMapGoogleScreen.cs" />

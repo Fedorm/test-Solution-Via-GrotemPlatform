@@ -36,6 +36,7 @@ namespace Test
             vl.AddChild(new Button("Web Request", MakeWebRequest_OnClick));
             vl.AddChild(new Button("Exit", ExitButton_OnClick));
 
+            vl2.AddChild(new Button("Test XML Screen", TestXMLScreen_OnClick));
             vl2.AddChild(new Button("Web", WebScreen_OnClick));
             vl2.AddChild(new Button("Swipe", SwipeScreen_OnClick));
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
@@ -117,7 +118,12 @@ namespace Test
             Application.Terminate();
         }
 
-        private void WebScreen_OnClick(object sender, EventArgs e)
+        private void TestXMLScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("TestXMLScreen");
+            
+        }
+ private void WebScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("WebScreen");
         }
