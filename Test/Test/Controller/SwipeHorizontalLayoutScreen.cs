@@ -29,7 +29,7 @@ namespace Test
             _swipeHorizontalLayout.CssClass = "SwipeHorizontalLayout";
             _swipeHorizontalLayout.Scrollable = true;
             _swipeHorizontalLayout.OnSwipe += SwipeIndex_OnSwipe;
-            
+
 
             _horizontalLayout = new HorizontalLayout();
             _horizontalLayout.CssClass = "HorizontalLayout";
@@ -37,22 +37,22 @@ namespace Test
             _image = new Image();
             _image.Source = "Image\\cats.jpg";
             _image.Visible = true;
-            _image.CssClass = "ImageForSwipe";
+            _image.CssClass = "ImageForSwipeHorizontal";
 
             _image2 = new Image();
             _image2.Source = "Image\\cat2.jpg";
             _image2.Visible = true;
-            _image2.CssClass = "ImageForSwipe";
+            _image2.CssClass = "ImageForSwipeHorizontal";
 
             _image3 = new Image();
             _image3.Source = "Image\\cat3.jpg";
             _image3.Visible = true;
-            _image3.CssClass = "ImageForSwipe";
+            _image3.CssClass = "ImageForSwipeHorizontal";
 
             _image4 = new Image();
             _image4.Source = "Image\\cat4.jpg";
             _image4.Visible = true;
-            _image4.CssClass = "ImageForSwipe";
+            _image4.CssClass = "ImageForSwipeHorizontal";
 
 
             _swipeHorizontalLayout.AddChild(_image);

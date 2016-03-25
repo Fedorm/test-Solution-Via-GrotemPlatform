@@ -245,11 +245,32 @@ Button {
     height: 100%;
     width: 100%;
 }
-.ImageForSwipe {
+.ImageForSwipeHorizontal {
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 0%;
     margin-right: 0%;
+    height: 80%;
+    width: 80%;
+}
+
+.SwipeVerticalLayout {
+    height: 100%;
+    width: 100%;
+}
+
+.VlForSwipeVertical {
+    background-color: #ff0000;
+    height: 50%;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.ImageForSwipeVertical {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
     height: 80%;
     width: 80%;
 }
