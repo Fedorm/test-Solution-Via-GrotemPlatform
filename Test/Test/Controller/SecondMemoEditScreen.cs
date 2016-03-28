@@ -5,73 +5,73 @@ namespace Test
 {
     public class SecondMemoEditScreen : Screen
     {
-        private MemoEdit autoMemoEdit;
-        private MemoEdit defaultMemoEditt;
-        private MemoEdit emailMemoEdit;
-        private MemoEdit numericMemoEdit;
-        private MemoEdit onGetFocusMemoEdit;
-        private MemoEdit onLostFocusMemoEdit;
-        private MemoEdit phoneMemoEdit;
-        private MemoEdit urlMemoEdit;
+        private MemoEdit _autoMemoEdit;
+        private MemoEdit _defaultMemoEditt;
+        private MemoEdit _emailMemoEdit;
+        private MemoEdit _numericMemoEdit;
+        private MemoEdit _onGetFocusMemoEdit;
+        private MemoEdit _onLostFocusMemoEdit;
+        private MemoEdit _phoneMemoEdit;
+        private MemoEdit _urlMemoEdit;
 
         public override void OnLoading()
         {
-            initialize();
+            Initialize();
         }
 
-        private void initialize()
+        private void Initialize()
         {
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            autoMemoEdit = new MemoEdit();
-            defaultMemoEditt = new MemoEdit();
-            numericMemoEdit = new MemoEdit();
-            emailMemoEdit = new MemoEdit();
-            urlMemoEdit = new MemoEdit();
-            phoneMemoEdit = new MemoEdit();
-            onGetFocusMemoEdit = new MemoEdit();
-            onLostFocusMemoEdit = new MemoEdit();
+            _autoMemoEdit = new MemoEdit();
+            _defaultMemoEditt = new MemoEdit();
+            _numericMemoEdit = new MemoEdit();
+            _emailMemoEdit = new MemoEdit();
+            _urlMemoEdit = new MemoEdit();
+            _phoneMemoEdit = new MemoEdit();
+            _onGetFocusMemoEdit = new MemoEdit();
+            _onLostFocusMemoEdit = new MemoEdit();
 
-            autoMemoEdit.CssClass = "MemoEdit";
-            defaultMemoEditt.CssClass = "MemoEdit";
-            numericMemoEdit.CssClass = "MemoEdit";
-            emailMemoEdit.CssClass = "MemoEdit";
-            urlMemoEdit.CssClass = "MemoEdit";
-            phoneMemoEdit.CssClass = "MemoEdit";
-            onGetFocusMemoEdit.CssClass = "MemoEdit";
-            onLostFocusMemoEdit.CssClass = "MemoEdit";
+            _autoMemoEdit.CssClass = "MemoEdit";
+            _defaultMemoEditt.CssClass = "MemoEdit";
+            _numericMemoEdit.CssClass = "MemoEdit";
+            _emailMemoEdit.CssClass = "MemoEdit";
+            _urlMemoEdit.CssClass = "MemoEdit";
+            _phoneMemoEdit.CssClass = "MemoEdit";
+            _onGetFocusMemoEdit.CssClass = "MemoEdit";
+            _onLostFocusMemoEdit.CssClass = "MemoEdit";
 
-            autoMemoEdit.Keyboard = "auto";
-            defaultMemoEditt.Keyboard = "default";
-            numericMemoEdit.Keyboard = "numeric";
-            emailMemoEdit.Keyboard = "email";
-            urlMemoEdit.Keyboard = "url";
-            phoneMemoEdit.Keyboard = "phone";
+            _autoMemoEdit.Keyboard = "auto";
+            _defaultMemoEditt.Keyboard = "default";
+            _numericMemoEdit.Keyboard = "numeric";
+            _emailMemoEdit.Keyboard = "email";
+            _urlMemoEdit.Keyboard = "url";
+            _phoneMemoEdit.Keyboard = "phone";
 
-            autoMemoEdit.Text = "Auto Memo Edit";
-            defaultMemoEditt.Text = "Default Memo Edit";
-            numericMemoEdit.Text = "Numeric Memo Edit";
-            emailMemoEdit.Text = "Email Memo Edit";
-            urlMemoEdit.Text = "Url Memo Edit";
-            phoneMemoEdit.Text = "Phone Memo Edit";
-            onGetFocusMemoEdit.Text = "Get Focus And Back To MemoEdit Screen";
-            onLostFocusMemoEdit.Text = "Lost Focus And Back To MemoEdit Screen";
+            _autoMemoEdit.Text = "Auto Memo Edit";
+            _defaultMemoEditt.Text = "Default Memo Edit";
+            _numericMemoEdit.Text = "Numeric Memo Edit";
+            _emailMemoEdit.Text = "Email Memo Edit";
+            _urlMemoEdit.Text = "Url Memo Edit";
+            _phoneMemoEdit.Text = "Phone Memo Edit";
+            _onGetFocusMemoEdit.Text = "Get Focus And Back To MemoEdit Screen";
+            _onLostFocusMemoEdit.Text = "Lost Focus And Back To MemoEdit Screen";
 
 //если вставить эту строку, невозможно будет перейти на экран
-//            phoneMemoEdit.OnChange += Back_OnClick;
+//            _phoneMemoEdit.OnChange += Back_OnClick;
 
-            onGetFocusMemoEdit.OnGetFocus += Back_OnClick;
-            onLostFocusMemoEdit.OnLostFocus += Back_OnClick;
+            _onGetFocusMemoEdit.OnGetFocus += Back_OnClick;
+            _onLostFocusMemoEdit.OnLostFocus += Back_OnClick;
 
-            vl.AddChild(autoMemoEdit);
-            vl.AddChild(defaultMemoEditt);
-            vl.AddChild(numericMemoEdit);
-            vl.AddChild(emailMemoEdit);
-            vl.AddChild(urlMemoEdit);
-            vl.AddChild(phoneMemoEdit);
-            vl.AddChild(onGetFocusMemoEdit);
-            vl.AddChild(onLostFocusMemoEdit);
+            vl.AddChild(_autoMemoEdit);
+            vl.AddChild(_defaultMemoEditt);
+            vl.AddChild(_numericMemoEdit);
+            vl.AddChild(_emailMemoEdit);
+            vl.AddChild(_urlMemoEdit);
+            vl.AddChild(_phoneMemoEdit);
+            vl.AddChild(_onGetFocusMemoEdit);
+            vl.AddChild(_onLostFocusMemoEdit);
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 

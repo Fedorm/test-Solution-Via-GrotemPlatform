@@ -63,12 +63,21 @@
     <Compile Include="Controller\ImageScreen.cs" />
     <Compile Include="Controller\IndicatorScreen.cs" />
     <Compile Include="Controller\LayoutScreen.cs" />
+    <Compile Include="Controller\MediaPlayerScreen.cs" />
     <Compile Include="Controller\MemoEditScreen.cs" />
     <Compile Include="Controller\SecondEditTextScreen.cs" />
     <Compile Include="Controller\SecondMemoEditScreen.cs" />
     <Compile Include="Controller\SomeControlsScreen.cs" />
+    <Compile Include="Controller\SwipeHorizontalLayoutScreen.cs" />
+    <Compile Include="Controller\SwipeVerticalLayoutScreen.cs" />
+    <Compile Include="Controller\SwipeScreen.cs" />
     <Compile Include="Controller\TestHorizontalLayoutScreen.cs" />
+    <Compile Include="Controller\TestXMLScreen.cs" />
     <Compile Include="Controller\VerticalLayoutScreen.cs" />
+    <Compile Include="Controller\WebImageScreen.cs" />
+    <Compile Include="Controller\WebMapGoogleScreen.cs" />
+    <Compile Include="Controller\WebScreen.cs" />
+    <Compile Include="Controller\WebViewScreen.cs" />
     <Compile Include="Controller\YandexScreen.cs" />
     <Compile Include="Module\BusinessProcess.cs" />
     <Compile Include="Controller\MainScreen.cs" />
@@ -110,6 +119,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Style\second.css" />
     <EmbeddedResource Include="Style\polev.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\cat3.jpg" />
+    <EmbeddedResource Include="Image\cat4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\cat2.jpg" />
+    <EmbeddedResource Include="Screen\TestXMLScreen.xml" />
+    <Content Include="Image\clip.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

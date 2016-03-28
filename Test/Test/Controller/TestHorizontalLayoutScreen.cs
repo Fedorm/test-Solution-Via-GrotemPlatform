@@ -9,23 +9,22 @@ namespace Test
         public override void OnLoading()
         {
             var hl = new HorizontalLayout();
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
-                hl.AddChild(new Button(string.Format("Btn  {0}  ", i.ToString()), vl_OnClick));
+                hl.AddChild(new Button(string.Format("Btn  {0}  ", i), vl_OnClick));
             }
             AddChild(hl);
             hl.AddChild(new Button("Back", Back_OnClick));
         }
 
-        void vl_OnClick(object sender, EventArgs e)
+        private void vl_OnClick(object sender, EventArgs e)
         {
-            Button btn = (Button) sender;
+            var btn = (Button) sender;
             DConsole.WriteLine(btn.Text);
             BusinessProcess.DoBack();
         }
 
-
-        void Back_OnClick(object sender, EventArgs e)
+        private void Back_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
         }

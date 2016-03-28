@@ -58,9 +58,27 @@ namespace Test
 
         private static Screen GetScreenByControllerName(string name)
         {
-            return Screen.CreateScreen("Test." + name); 
+            //return Screen.CreateScreen("Test." + name);
             //full type name should be specified 
-                                          
+
+            Screen scr = Screen.CreateScreen("Test." + name); //full type name should be specified
+            System.IO.Stream s = null;
+            String path = String.Format(@"Screen\{0}.xml", name);
+            try
+            {
+                s = Application.GetResourceStream(path); //try to find markup resource
             }
+            catch
+            {
+                DConsole.WriteLine(String.Format("Resource {0} has not been found", path));
+            }
+
+            if (s != null)
+            {
+                scr.LoadFromStream(s);
+            }
+
+            return scr;
         }
     }
+}

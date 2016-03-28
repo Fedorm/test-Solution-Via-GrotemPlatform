@@ -5,76 +5,75 @@ namespace Test
 {
     public class SecondEditTextScreen : Screen
     {
-        private EditText autoEditText;
-        private EditText defaultEditText;
-        private EditText emailEditText;
-        private EditText numericEditText;
-        private EditText onGetFocusEditText;
-        private EditText onLostFocusEditText;
-        private EditText phoneEditText;
-        private EditText urlEditText;
+        private EditText _autoEditText;
+        private EditText _defaultEditText;
+        private EditText _emailEditText;
+        private EditText _numericEditText;
+        private EditText _onGetFocusEditText;
+        private EditText _onLostFocusEditText;
+        private EditText _phoneEditText;
+        private EditText _urlEditText;
 
         public override void OnLoading()
         {
-            initialize();
+            Initialize();
         }
 
-        private void initialize()
+        private void Initialize()
         {
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            autoEditText = new EditText();
-            defaultEditText = new EditText();
-            numericEditText = new EditText();
-            emailEditText = new EditText();
-            urlEditText = new EditText();
-            phoneEditText = new EditText();
-            onGetFocusEditText = new EditText();
-            onLostFocusEditText = new EditText();
+            _autoEditText = new EditText();
+            _defaultEditText = new EditText();
+            _numericEditText = new EditText();
+            _emailEditText = new EditText();
+            _urlEditText = new EditText();
+            _phoneEditText = new EditText();
+            _onGetFocusEditText = new EditText();
+            _onLostFocusEditText = new EditText();
 
-            autoEditText.CssClass = "EditText";
-            defaultEditText.CssClass = "EditText";
-            numericEditText.CssClass = "EditText";
-            emailEditText.CssClass = "EditText";
-            urlEditText.CssClass = "EditText";
-            phoneEditText.CssClass = "EditText";
-            onGetFocusEditText.CssClass = "EditText";
-            onLostFocusEditText.CssClass = "EditText";
+            _autoEditText.CssClass = "EditText";
+            _defaultEditText.CssClass = "EditText";
+            _numericEditText.CssClass = "EditText";
+            _emailEditText.CssClass = "EditText";
+            _urlEditText.CssClass = "EditText";
+            _phoneEditText.CssClass = "EditText";
+            _onGetFocusEditText.CssClass = "EditText";
+            _onLostFocusEditText.CssClass = "EditText";
 
-            autoEditText.Keyboard = "auto";
-            defaultEditText.Keyboard = "default";
-            numericEditText.Keyboard = "numeric";
-            emailEditText.Keyboard = "email";
-            urlEditText.Keyboard = "url";
-            phoneEditText.Keyboard = "phone";
+            _autoEditText.Keyboard = "auto";
+            _defaultEditText.Keyboard = "default";
+            _numericEditText.Keyboard = "numeric";
+            _emailEditText.Keyboard = "email";
+            _urlEditText.Keyboard = "url";
+            _phoneEditText.Keyboard = "phone";
 
-            autoEditText.Text = "Auto Edit Text";
-            defaultEditText.Text = "Default Edit Text";
-            numericEditText.Text = "Numeric Edit Text";
-            emailEditText.Text = "Email Edit Text";
-            urlEditText.Text = "Url Edit Text";
-            phoneEditText.Text = "Phone Edit Text";
-            onGetFocusEditText.Text = "Get Focus And Back To EditText Screen";
-            onLostFocusEditText.Text = "Lost Focus And Back To EditText Screen";
+            _autoEditText.Text = "Auto Edit Text";
+            _defaultEditText.Text = "Default Edit Text";
+            _numericEditText.Text = "Numeric Edit Text";
+            _emailEditText.Text = "Email Edit Text";
+            _urlEditText.Text = "Url Edit Text";
+            _phoneEditText.Text = "Phone Edit Text";
+            _onGetFocusEditText.Text = "Get Focus And Back To EditText Screen";
+            _onLostFocusEditText.Text = "Lost Focus And Back To EditText Screen";
 
 //если вставить эту строку, невозможно будет перейти на экран
-//            phoneEditText.OnChange += Back_OnClick;
+//            _phoneEditText.OnChange += Back_OnClick;
 
-            onGetFocusEditText.OnGetFocus += Back_OnClick;
-            onLostFocusEditText.OnLostFocus += Back_OnClick;
+            _onGetFocusEditText.OnGetFocus += Back_OnClick;
+            _onLostFocusEditText.OnLostFocus += Back_OnClick;
 
-            vl.AddChild(autoEditText);
-            vl.AddChild(defaultEditText);
-            vl.AddChild(numericEditText);
-            vl.AddChild(emailEditText);
-            vl.AddChild(urlEditText);
-            vl.AddChild(phoneEditText);
-            vl.AddChild(onGetFocusEditText);
-            vl.AddChild(onLostFocusEditText);
+            vl.AddChild(_autoEditText);
+            vl.AddChild(_defaultEditText);
+            vl.AddChild(_numericEditText);
+            vl.AddChild(_emailEditText);
+            vl.AddChild(_urlEditText);
+            vl.AddChild(_phoneEditText);
+            vl.AddChild(_onGetFocusEditText);
+            vl.AddChild(_onLostFocusEditText);
             vl.AddChild(new Button("Back", Back_OnClick));
         }
-
 
         private void Back_OnClick(object sender, EventArgs e)
         {

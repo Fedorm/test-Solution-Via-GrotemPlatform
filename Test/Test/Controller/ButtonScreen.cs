@@ -6,54 +6,57 @@ namespace Test
 {
     public class ButtonScreen : Screen
     {
-        private Button cssButton;
-        private Button invisibleButton;
-        private Button newButton;
-        private VerticalLayout vl;
+        private Button _cssButton;
+        private Button _invisibleButton;
+        private Button _newButton;
+        private Button _textButton;
+        private VerticalLayout _vl;
 
         public override void OnLoading()
         {
-
             Initialize();
         }
 
         private void Initialize()
         {
-            vl = new VerticalLayout();
-            AddChild(vl);
+            _vl = new VerticalLayout();
+            AddChild(_vl);
 
-            invisibleButton = new Button {Text = "HIDE ME", Visible = false};
-            invisibleButton.OnClick += Visible_OnClick;
+            _invisibleButton = new Button {Text = "HIDE ME", Visible = false};
+            _invisibleButton.OnClick += Visible_OnClick;
 
-            cssButton = new Button();
-            cssButton.CssClass = "CssButton";
-            cssButton.Text = "CssButton";
-            cssButton.OnClick += ChangeCssAndText_OnClick;
-            cssButton.Id = "Id Of Invisible Button";
+            _cssButton = new Button();
+            _cssButton.CssClass = "CssButton";
+            _cssButton.Text = "CssButton";
+            _cssButton.OnClick += ChangeCssAndText_OnClick;
+            _cssButton.Id = "Id Of Invisible Button";
 
-            vl.AddChild(new Button("Unhide Button", Visible_OnClick));
 
-            vl.AddChild(invisibleButton);
-            vl.AddChild(cssButton);
-            vl.AddChild(new Button("Back", Back_OnClick));
+            _textButton = new Button();
+            _textButton.Text = "TextButton";
+            _textButton.OnClick += ChangeText_OnClick;
+
+            _vl.AddChild(new Button("Unhide Button", Visible_OnClick));
+
+            _vl.AddChild(_invisibleButton);
+            _vl.AddChild(_cssButton);
+            _vl.AddChild(_textButton);
+            _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
+            _vl.AddChild(new Button("Back", Back_OnClick));
         }
-
 
         private void Visible_OnClick(object sender, EventArgs e)
         {
-            if (invisibleButton.Visible)
+            if (_invisibleButton.Visible)
             {
-                invisibleButton.Visible = false;
-                DConsole.WriteLine(string.Format(cssButton.Id));
+                _invisibleButton.Visible = false;
+                DConsole.WriteLine(string.Format(_cssButton.Id));
             }
-            else if (invisibleButton.Visible == false)
+            else if (_invisibleButton.Visible == false)
             {
-                invisibleButton.Visible = true;
+                _invisibleButton.Visible = true;
             }
         }
-
-
-
 
         private void Back_OnClick(object sender, EventArgs e)
         {
@@ -62,17 +65,45 @@ namespace Test
 
         private void ChangeCssAndText_OnClick(object sender, EventArgs e)
         {
-            if (cssButton.CssClass == "CssButton")
+            if (_cssButton.CssClass == "CssButton")
             {
-                cssButton.CssClass = "ChangeCssButton";
-                cssButton.Text = "ChangeCss";
-                cssButton.Refresh();
+                _cssButton.CssClass = "ChangeCssButton";
+                _cssButton.Text = "ChangeCss";
+                _cssButton.Refresh();
             }
-            else if (cssButton.CssClass == "ChangeCssButton")
+            else if (_cssButton.CssClass == "ChangeCssButton")
             {
-                cssButton.CssClass = "CssButton";
-                cssButton.Text = "CssButton";
-                cssButton.Refresh();
+                _cssButton.CssClass = "CssButton";
+                _cssButton.Text = "CssButton";
+                _cssButton.Refresh();
+            }
+        }
+
+        private void AddNewButton_OnClick(object sender, EventArgs e)
+        {
+            _newButton = new Button("My name is NewButton", Back_OnClick);
+            var text = new EditText();
+            text.Text = "New EditText";
+            var image = new Image();
+            image.Source = "Image\\cats.jpg";
+            _vl.AddChild(_newButton);
+            _vl.AddChild(text);
+            _vl.AddChild(image);
+            _vl.Refresh();
+        }
+
+        void ChangeText_OnClick(object sender, EventArgs e)
+        {
+
+
+            if (_textButton.Text == "TextButton")
+            {
+                _textButton.Text = "Change Text Of TextButton";
+
+            }
+            else if (_textButton.Text == "Change Text Of TextButton")
+            {
+                _textButton.Text = "TextButton";
             }
         }
     }

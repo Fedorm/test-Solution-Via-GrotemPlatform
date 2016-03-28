@@ -1,1 +1,1 @@
-C:\Example\Test\Test\bin\Debug\Test.dll.zip 
+C:\TestSolution\Test\Test\bin\Debug\Test.dll.zip 
