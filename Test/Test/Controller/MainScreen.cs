@@ -42,6 +42,8 @@ namespace Test
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
+            vl2.AddChild(new Button("Exit2", ExitButton_OnClick));
+
 
             _scrollView.AddChild(vl);
             _scrollView.AddChild(vl2);
