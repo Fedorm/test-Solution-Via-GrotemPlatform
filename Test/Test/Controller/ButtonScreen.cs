@@ -9,6 +9,7 @@ namespace Test
         private Button _cssButton;
         private Button _invisibleButton;
         private Button _newButton;
+        private Button _textButton;
         private VerticalLayout _vl;
 
         public override void OnLoading()
@@ -30,10 +31,16 @@ namespace Test
             _cssButton.OnClick += ChangeCssAndText_OnClick;
             _cssButton.Id = "Id Of Invisible Button";
 
+
+            _textButton = new Button();
+            _textButton.Text = "TextButton";
+            _textButton.OnClick += ChangeText_OnClick;
+
             _vl.AddChild(new Button("Unhide Button", Visible_OnClick));
 
             _vl.AddChild(_invisibleButton);
             _vl.AddChild(_cssButton);
+            _vl.AddChild(_textButton);
             _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
         }
@@ -83,6 +90,21 @@ namespace Test
             _vl.AddChild(text);
             _vl.AddChild(image);
             _vl.Refresh();
+        }
+
+        void ChangeText_OnClick(object sender, EventArgs e)
+        {
+
+
+            if (_textButton.Text == "TextButton")
+            {
+                _textButton.Text = "Change Text Of TextButton";
+
+            }
+            else if (_textButton.Text == "Change Text Of TextButton")
+            {
+                _textButton.Text = "TextButton";
+            }
         }
     }
 }

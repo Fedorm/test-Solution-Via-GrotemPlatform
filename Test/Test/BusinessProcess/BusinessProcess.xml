@@ -14,9 +14,9 @@
       <Action Name="MemoEditScreen" NextStep="MemoEditScreen"></Action>
       <Action Name="IndicatorScreen" NextStep="IndicatorScreen"></Action>
       <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
-      <Action Name="TestXMLScreen" NextStep="TestXMLScreen"></Action>
       <Action Name="WebScreen" NextStep="WebScreen"></Action>
       <Action Name="SwipeScreen" NextStep="SwipeScreen"></Action>
+      <Action Name="TestXMLScreen" NextStep="TestXMLScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -44,7 +44,6 @@
     <Step Name="SecondMemoEditScreen" Controller="SecondMemoEditScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="IndicatorScreen" Controller="IndicatorScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="MediaPlayerScreen" Controller="MediaPlayerScreen" StyleSheet="Style\main.css"></Step>
-    <Step Name="TestXMLScreen" Controller="TestXMLScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="WebScreen" Controller="WebScreen" StyleSheet="Style\main.css">
       <Action Name="WebViewScreen" NextStep="WebViewScreen"></Action>
       <Action Name="WebMapGoogleScreen" NextStep="WebMapGoogleScreen"></Action>
@@ -59,6 +58,9 @@
     </Step>
     <Step Name="SwipeHorizontalLayoutScreen" Controller="SwipeHorizontalLayoutScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="SwipeVerticalLayoutScreen" Controller="SwipeVerticalLayoutScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="TestXMLScreen" Controller="TestXMLScreen" StyleSheet="Style\main.css"></Step>
+    
+
   </Workflow>
 
 

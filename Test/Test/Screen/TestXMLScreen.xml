@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.ClientModel3.UI" xmlns:s="BitMobile.ValueStack">
+  <c:VerticalLayout>
+    <c:Button Text="Back On Click" OnClick="Back_OnClick"/>
+    <c:Button Id="_textButton" Text="TextButton"/>
+    <c:Button Id="_visibleButton" Text="VisibleButton"/>
+    <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON"/>
+    <c:Button Id="exitButton" Text="Exit" OnClick="ExitButton_OnClick"/>
+  </c:VerticalLayout>
+</c:Screen>

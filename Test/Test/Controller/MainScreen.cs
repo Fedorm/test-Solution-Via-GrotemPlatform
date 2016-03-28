@@ -123,6 +123,7 @@ namespace Test
             BusinessProcess.DoAction("TestXMLScreen");
             
         }
+
  private void WebScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("WebScreen");
