@@ -1,10 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <c:Screen xmlns:c="BitMobile.ClientModel3.UI" xmlns:s="BitMobile.ValueStack">
+
   <c:VerticalLayout>
-    <c:Button Text="Back On Click" OnClick="Back_OnClick"/>
-    <c:Button Id="_textButton" Text="TextButton"/>
-    <c:Button Id="_visibleButton" Text="VisibleButton"/>
-    <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON"/>
-    <c:Button Id="exitButton" Text="Exit" OnClick="ExitButton_OnClick"/>
+
+    <c:WebView Url="https://youtube.com"/>
+    <c:Button Text="Back On Click" OnClick="Back_OnClick" CssClass="CssButton" />
+    <!--<c:Button Id="_textButton" Text="TextButton"/>-->
+    <c:Button Id="_visibleButton" Text="VisibleButton" />
+    <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON" />
+    <c:TextView Id="_firstTextView" Text="TextView" />
+    <!--<c:EditText Id="_firstEditText" />
+    <c:MemoEdit Id="_firstMemoEdit" />-->
+    <!--<c:HorizontalLine Id="_firstHorizontalLine" />-->
+    <!--<c:CheckBox Id="_firstCheckBox" />-->
+    <!--<c:Indicator Id="_firstIndicator" />-->
+    <!--<c:WebImage Id="_firstWebImage" CssClass="WebImage" Url="http://goo.gl/muPIv2"/>-->
+  <!--<c:Image Source="Image\\cats.jpg"/>-->
+    <!--<c:WebMapGoogle Id="_firstWebMap" />-->
+
   </c:VerticalLayout>
+
 </c:Screen>

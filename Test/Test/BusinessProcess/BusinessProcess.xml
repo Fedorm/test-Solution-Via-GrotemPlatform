@@ -16,6 +16,7 @@
       <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
       <Action Name="WebScreen" NextStep="WebScreen"></Action>
       <Action Name="SwipeScreen" NextStep="SwipeScreen"></Action>
+      <Action Name="DatabaseScreen" NextStep="DatabaseScreen"></Action>
       <Action Name="TestXMLScreen" NextStep="TestXMLScreen"></Action>
     </Step>
 
@@ -58,6 +59,7 @@
     </Step>
     <Step Name="SwipeHorizontalLayoutScreen" Controller="SwipeHorizontalLayoutScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="SwipeVerticalLayoutScreen" Controller="SwipeVerticalLayoutScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="DatabaseScreen" Controller="DatabaseScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="TestXMLScreen" Controller="TestXMLScreen" StyleSheet="Style\main.css"></Step>
     
 
