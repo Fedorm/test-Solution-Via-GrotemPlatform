@@ -61,7 +61,8 @@ namespace Test
             //return Screen.CreateScreen("Test." + name);
             //full type name should be specified 
 
-            var scr = Screen.CreateScreen("Test." + name); //full type name should be specified
+            //var scr = Screen.CreateScreen("Test." + name); //full type name should be specified
+            Screen scr = (Screen)Application.CreateInstance("Test." + name); //full type name should be specified
             Stream s = null;
             var path = string.Format(@"Screen\{0}.xml", name);
             try

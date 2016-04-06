@@ -11,6 +11,7 @@ namespace Test
         private Button _newButton;
         private Button _textButton;
         private VerticalLayout _vl;
+        
 
         public override void OnLoading()
         {
@@ -30,7 +31,6 @@ namespace Test
             _cssButton.Text = "CssButton";
             _cssButton.OnClick += ChangeCssAndText_OnClick;
             _cssButton.Id = "Id Of Invisible Button";
-
 
             _textButton = new Button();
             _textButton.Text = "TextButton";

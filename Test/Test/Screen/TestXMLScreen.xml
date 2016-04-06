@@ -4,18 +4,22 @@
 
   <c:VerticalLayout>
 
-    <c:WebView Url="https://youtube.com"/>
+    <!--<c:WebView Url="https://youtube.com"/>-->
     <c:Button Text="Back On Click" OnClick="Back_OnClick" CssClass="CssButton" />
-    <!--<c:Button Id="_textButton" Text="TextButton"/>-->
+    <c:Button Id="_textButton" Text="TextButton" OnClick="ShowTextView_OnClick"/>
     <c:Button Id="_visibleButton" Text="VisibleButton" />
-    <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON" />
+    <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON" OnClick="ChangeVisibility_OnClick" />
+    
+    <!--<c:Push Id="outlet" Value="_visibleButton"/>-->
     <c:TextView Id="_firstTextView" Text="TextView" />
-    <!--<c:EditText Id="_firstEditText" />
-    <c:MemoEdit Id="_firstMemoEdit" />-->
+    
+    <c:EditText Id="_firstEditText" Text="EditText" Placeholder="PLACEHOLDER"   />
+    <!--<c:MemoEdit Id="_firstMemoEdit" />-->
     <!--<c:HorizontalLine Id="_firstHorizontalLine" />-->
     <!--<c:CheckBox Id="_firstCheckBox" />-->
     <!--<c:Indicator Id="_firstIndicator" />-->
-    <!--<c:WebImage Id="_firstWebImage" CssClass="WebImage" Url="http://goo.gl/muPIv2"/>-->
+    <c:WebImage Id="_firstWebImage" CssClass="WebImage" Url="http://goo.gl/muPIv2"/>
+    
   <!--<c:Image Source="Image\\cats.jpg"/>-->
     <!--<c:WebMapGoogle Id="_firstWebMap" />-->
 

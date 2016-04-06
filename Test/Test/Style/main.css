@@ -274,3 +274,8 @@ Button {
     height: 80%;
     width: 80%;
 }
+
+.ScrollView {
+      height: 100%;
+    width: 100%;
+}
