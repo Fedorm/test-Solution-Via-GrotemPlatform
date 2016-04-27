@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ButtonScreen.cs" />
+    <Compile Include="Controller\CameraPhoneGpsScreen.cs" />
     <Compile Include="Controller\CheckBoxScreen.cs" />
+    <Compile Include="Controller\DialogScreen.cs" />
     <Compile Include="Controller\DatabaseScreen.cs" />
     <Compile Include="Controller\DockLayoutScreen.cs" />
     <Compile Include="Controller\EditTextScreen.cs" />
@@ -127,8 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\cat2.jpg" />
-    <EmbeddedResource Include="Screen\TestXMLScreen.xml" />
-    <Content Include="Image\clip.mp4" />
+    <EmbeddedResource Include="Screen\TestXMLScreen.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\1.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

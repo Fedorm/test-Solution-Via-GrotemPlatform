@@ -1,4 +1,5 @@
 ﻿using System;
+using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 
 namespace Test
@@ -21,7 +22,7 @@ namespace Test
             _mediaPlayer.Visible = true;
             _mediaPlayer.Id = "Id Of MediaPlayer";
             _mediaPlayer.CssClass = "MediaPlayer";
-            _mediaPlayer.Path = "Image\\clip.mp4";
+            
 
             vl.AddChild(new TextView("YOU CAN SEE MEDIAPLAYER IN NEXT VERSION"));
             vl.AddChild(new Button("Play", Play_OnClick));
@@ -33,7 +34,14 @@ namespace Test
 
         private void Play_OnClick(object sender, EventArgs e)   
         {
-            _mediaPlayer.Play();
+            //var path = "/private/1.mp4";
+            //using (var stream = FileSystem.CreateFileStream(path))
+            //{
+            //    Application.GetResourceStream(@"Image\1.mp4").CopyTo(stream);
+            //    stream.Flush();
+            //}
+            //_mediaPlayer.Path = path;
+            //_mediaPlayer.Play();
         }
 
         private void Pause_OnClick(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace Test
                 if (!string.IsNullOrEmpty(link))
                 {
                     DB.MarkPhotoAsSynced(id, link);
-                    FileSystem.DeleteFile(fileName);
+                    //FileSystem.DeleteFile(fileName);
 
                     DConsole.WriteLine(string.Format("Photo file {0} has been successfully uploaded", fileName));
                 }

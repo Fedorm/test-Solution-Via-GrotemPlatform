@@ -43,6 +43,7 @@ namespace Test
             _placeholderEditText = new EditText();
             _placeholderEditText.CssClass = "EditText";
             _placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+            _placeholderEditText.AutoFocus = true;
 
             _notEnabledEditText = new EditText();
             _notEnabledEditText.Text = "NOT ENABLED EDIT TEXT";

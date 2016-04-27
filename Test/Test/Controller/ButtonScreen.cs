@@ -11,7 +11,7 @@ namespace Test
         private Button _newButton;
         private Button _textButton;
         private VerticalLayout _vl;
-        
+
 
         public override void OnLoading()
         {
@@ -22,6 +22,11 @@ namespace Test
         {
             _vl = new VerticalLayout();
             AddChild(_vl);
+
+
+            var dialog = new Dialog();
+            //dialog.Date();
+
 
             _invisibleButton = new Button {Text = "HIDE ME", Visible = false};
             _invisibleButton.OnClick += Visible_OnClick;
@@ -42,6 +47,7 @@ namespace Test
             _vl.AddChild(_cssButton);
             _vl.AddChild(_textButton);
             _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
+            _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
         }
 
@@ -60,6 +66,7 @@ namespace Test
 
         private void Back_OnClick(object sender, EventArgs e)
         {
+           
             BusinessProcess.DoBack();
         }
 
@@ -92,19 +99,23 @@ namespace Test
             _vl.Refresh();
         }
 
-        void ChangeText_OnClick(object sender, EventArgs e)
+        private void ChangeText_OnClick(object sender, EventArgs e)
         {
-
-
             if (_textButton.Text == "TextButton")
             {
                 _textButton.Text = "Change Text Of TextButton";
-
             }
             else if (_textButton.Text == "Change Text Of TextButton")
             {
                 _textButton.Text = "TextButton";
             }
         }
+
+        private void AddNewDialog_OnClick(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(10000);
+            Dialog.Message("Success");
+       
+            }
+        }
     }
-}

@@ -8,6 +8,7 @@ namespace Test
     {
         private HorizontalLine _horizontalLine;
         private TextView _textView;
+        
 
         public override void OnLoading()
         {
@@ -18,6 +19,8 @@ namespace Test
         {
             var vl = new VerticalLayout();
             AddChild(vl);
+            
+            
 
             _horizontalLine = new HorizontalLine();
             _horizontalLine.Visible = true;
@@ -38,7 +41,15 @@ namespace Test
             vl.AddChild(_textView);
             vl.AddChild(new Button("Change Visibility Of TextView", ChangeVisibilityOfTextView_OnClick));
             vl.AddChild(new Button("Change Text Of TextView", ChangeTextOfTextView_OnClick));
+            vl.AddChild(new Button("Camera.MakeSnapShot", CameraMake_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
+        }
+
+        private void CameraMake_OnClick(object sender, EventArgs e)
+        {
+            Camera.Path = "//private//order.jpg";
+            Camera.MakeSnapshot();
+
         }
 
         private void Back_OnClick(object sender, EventArgs e)

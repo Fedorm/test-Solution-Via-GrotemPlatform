@@ -13,7 +13,7 @@ namespace Test
 
         public override void OnLoading()
         {
-            //((Button)GetControl("_textButton", true)).OnClick += ChangeText_OnClick;
+            ((Button)GetControl("_textButton", true)).OnClick += ChangeText_OnClick;
             ((Button)GetControl("_visibleButton", true)).OnClick += ChangeVisibility_OnClick;
             ((Button)GetControl("_changeVisibilityButton", true)).OnClick += ChangeVisibility_OnClick;
 
@@ -36,7 +36,6 @@ namespace Test
             if (_textButton.Text == "TextButton")
             {
                 _textButton.Text = "Change Text Of TextButton";
-
             }
             else if (_textButton.Text == "Change Text Of TextButton")
             {
@@ -75,9 +74,18 @@ namespace Test
 
         private void ShowTextView_OnClick(object sender, EventArgs e)
         {
-            TextView text = (TextView)GetControl("_firstTextView", true);
+            var text = (TextView) GetControl("_firstTextView", true);
             DConsole.WriteLine(string.Format(text.Text));
         }
+
+
+        private string[] GetControls()
+        {
+            return new[]
+            {"One", "Two", "Three"}
+                ;
+        }
+
 
     }
 }

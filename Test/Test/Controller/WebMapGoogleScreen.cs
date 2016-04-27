@@ -10,6 +10,10 @@ namespace Test
         
         public override void OnLoading()
         {
+            GPS.StartTracking(1);
+            System.Threading.Thread.Sleep(100);
+            DConsole.WriteLine(string.Format(GPS.StartTracking().ToString()));
+            DConsole.WriteLine(string.Format(GPS.CurrentLocation.ToString()));
             Initialize();
         }
 
@@ -22,7 +26,8 @@ namespace Test
             _webMapGoogle.Visible = true;
             _webMapGoogle.CssClass = "WebMapGoogle";
             _webMapGoogle.Id = "ID OF WEB MAP GOOGLE";
-            _webMapGoogle.AddMarker("marker", 59.880318, 30.439876, "red");
+            GPS.Update();
+            _webMapGoogle.AddMarker("marker", GPS.CurrentLocation.Latitude, GPS.CurrentLocation.Longitude, "red");
 
 
             vl.AddChild(_webMapGoogle);
