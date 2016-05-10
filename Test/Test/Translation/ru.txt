@@ -1,0 +1,3 @@
+﻿about		MORE ABOUT THE APPLICATION
+test		ЭТО ТЕСТ
+greeting		Добро Пожаловать!

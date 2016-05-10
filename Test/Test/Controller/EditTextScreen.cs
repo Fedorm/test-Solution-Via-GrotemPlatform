@@ -36,7 +36,7 @@ namespace Test
             _textEditText = new EditText();
             _textEditText.CssClass = "EditText";
             _textEditText.Text = "PLEASE CHANGE MY TEXT";
-            //_textEditText.AutoFocus = true;
+            _textEditText.AutoFocus = true;
             //_textEditText.Length = 2;
             //_textEditText.Required = true;
 

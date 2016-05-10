@@ -7,7 +7,6 @@ namespace Test
     public class DialogScreen: Screen
     {
         private Dialog dialog;
-        private EditText editText;
         public override void OnLoading()
         {
             Initialize();
@@ -18,14 +17,14 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
-            editText = new EditText();
-            editText.AutoFocus = true;
 
             vl.AddChild(new Button("Test Dialog.Message Success", AddNewDialog_OnClick));
-            vl.AddChild(new Button("Test Dialog", TestDialog_OnClick));
+            vl.AddChild(new Button("Test Dialog", Dialog_OnClick));
             
+            
+
             vl.AddChild(new Button("Back", Back_OnClick));
-            vl.AddChild(editText);
+
         }
 
 
@@ -38,10 +37,36 @@ namespace Test
             Dialog.Message("Success");
 
         }
-        private void TestDialog_OnClick(object sender, EventArgs e)
+      
+
+        private void Dialog_OnClick(object sender, EventArgs e)
         {
-            //Dialog.Alert("ALERT", Back_OnClick, null, "Positive", "Negative", "Neutral");
-         //Dialog.Debug();
+            Dialog.Alert("Test", Alert_Handler, null, "ok");
+        }
+
+        private void Alert_Handler(object sender, ResultEventArgs<int> args)
+        {
+            DConsole.WriteLine(args.Result.ToString());
+            Dialog.Ask("Are you ok ?", Ask_Handler);
+        }
+
+        private void Ask_Handler(object sender, ResultEventArgs<Dialog.Result> args)
+        {
+            if (args.Result == Dialog.Result.Yes)
+            {
+                Console.WriteLine("That's good");
+                Dialog.DateTime("What time is is ?", DateTime_Handler);
+            }
+            else if (args.Result == Dialog.Result.No)
+            {
+                Console.WriteLine("That's bad");
+                Dialog.DateTime("What time is is ?", DateTime_Handler);
+            }
+        }
+
+        private void DateTime_Handler(object sender, ResultEventArgs<DateTime> args)
+        {
+            DConsole.WriteLine(args.Result.ToShortTimeString());
         }
     }
 }

@@ -13,14 +13,14 @@ namespace Test
 
         public override void OnLoading()
         {
-            ((Button)GetControl("_textButton", true)).OnClick += ChangeText_OnClick;
-            ((Button)GetControl("_visibleButton", true)).OnClick += ChangeVisibility_OnClick;
-            ((Button)GetControl("_changeVisibilityButton", true)).OnClick += ChangeVisibility_OnClick;
+            //((Button)GetControl("_textButton", true)).OnClick += ChangeText_OnClick;
+            //((Button)GetControl("_visibleButton", true)).OnClick += ChangeVisibility_OnClick;
+            //((Button)GetControl("_changeVisibilityButton", true)).OnClick += ChangeVisibility_OnClick;
 
-            text = (TextView)GetControl("_firstTextView", true);
-            edit = (EditText)GetControl("_firstEditText", true);
-            DConsole.WriteLine(string.Format(text.Text));
-            DConsole.WriteLine(string.Format(edit.Placeholder));
+            //text = (TextView)GetControl("_firstTextView", true);
+            //edit = (EditText)GetControl("_firstEditText", true);
+            //DConsole.WriteLine(string.Format(text.Text));
+            //DConsole.WriteLine(string.Format(edit.Placeholder));
         }
 
 

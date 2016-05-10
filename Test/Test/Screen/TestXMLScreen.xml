@@ -13,7 +13,7 @@
     <s:Push Id="outlet" Value="$_textButton" />
     <c:TextView Id="_firstTextView" Text="TextView" />
 
-    <c:EditText Id="_firstEditText" Text="EditText" Placeholder="PLACEHOLDER" />
+    <c:EditText Id="_firstEditText" Text="EditText" Placeholder="PLACEHOLDER" AutoFocus="true" />
     <!--<c:MemoEdit Id="_firstMemoEdit" />-->
     <!--<c:HorizontalLine Id="_firstHorizontalLine" />-->
     <!--<c:CheckBox Id="_firstCheckBox" Checked="True" />-->

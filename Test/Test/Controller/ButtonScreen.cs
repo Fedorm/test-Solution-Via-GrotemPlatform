@@ -113,7 +113,8 @@ namespace Test
 
         private void AddNewDialog_OnClick(object sender, EventArgs e)
         {
-            System.Threading.Thread.Sleep(10000);
+            //System.Threading.Thread.Sleep(10000);
+            FileSystem.SyncShared();
             Dialog.Message("Success");
        
             }

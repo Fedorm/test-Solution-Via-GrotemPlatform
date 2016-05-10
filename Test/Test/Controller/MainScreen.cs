@@ -42,6 +42,8 @@ namespace Test
             vl2.AddChild(new Button("Database", DatabaseScreen_OnClick));
             vl2.AddChild(new Button("Dialog", DialogScreen_OnClick));
             vl2.AddChild(new Button("CameraPhoneGpsClipboard", CameraPhoneGps_OnClick));
+            vl2.AddChild(new Button("FileSystemScreen", FileSystemScreen_OnClick));
+            vl2.AddChild(new Button("Component Screen", ComponentScreen_OnClick));
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
@@ -149,6 +151,15 @@ namespace Test
         private void CameraPhoneGps_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("CameraPhoneGpsScreen");
+        }
+
+        private void FileSystemScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("FileSystemScreen");
+        }
+        private void ComponentScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("ComponentScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)
