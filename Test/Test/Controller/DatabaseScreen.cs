@@ -6,6 +6,8 @@ namespace Test
 {
     public class DatabaseScreen : Screen
     {
+     
+
         public override void OnLoading()
         {
             Initialize();
@@ -13,18 +15,10 @@ namespace Test
 
         private void Initialize()
         {
-            var vl = new VerticalLayout();
-            AddChild(vl);
 
-            var db = new Database();
-
-            db.CreateFromModel();
-
-            vl.AddChild(new Button("Back", Back_OnClick));
         }
 
-
-        private void Back_OnClick(object sender, EventArgs e)
+        void BackButton_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
         }

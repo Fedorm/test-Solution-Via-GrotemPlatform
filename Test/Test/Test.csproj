@@ -153,6 +153,11 @@
     <EmbeddedResource Include="Translation\en.txt" />
     <EmbeddedResource Include="Translation\ru.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Screen\DatabaseScreen.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(SolutionDir)\..\SDK\BitMobileSDK\BitMobileSDK.exe $(TargetPath)

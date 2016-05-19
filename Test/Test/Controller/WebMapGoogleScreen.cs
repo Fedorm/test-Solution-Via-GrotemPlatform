@@ -10,13 +10,8 @@ namespace Test
         private VerticalLayout vl;
 
 
-
         public override void OnLoading()
         {
-            //GPS.StartTracking(1);
-            //System.Threading.Thread.Sleep(100);
-            //DConsole.WriteLine(string.Format(GPS.StartTracking().ToString()));
-            //DConsole.WriteLine(string.Format(GPS.CurrentLocation.ToString()));
             Initialize();
         }
 
@@ -25,13 +20,9 @@ namespace Test
             vl = new VerticalLayout();
             AddChild(vl);
 
-           
-            //GPS.Update();
-            //_webMapGoogle.AddMarker("marker", GPS.CurrentLocation.Latitude, GPS.CurrentLocation.Longitude, "red");
 
-
-          
             vl.AddChild(new Button("ID", ID_OnClick));
+            vl.AddChild(new Button("Stop GPS", StopGPS_OnClick));
             vl.AddChild(new Button("Start GPS", StartTracking_OnClick));
             vl.AddChild(new Button("Add Web Map Google", Add_WebMap_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
@@ -42,12 +33,17 @@ namespace Test
         {
             BusinessProcess.DoBack();
         }
+        private void StopGPS_OnClick(object sender, EventArgs e)
+        {
+            GPS.StopTracking();
+        }
 
         private void ID_OnClick(object sender, EventArgs e)
         {
             DConsole.WriteLine(string.Format(_webMapGoogle.Id));
         }
- private void Add_WebMap_OnClick(object sender, EventArgs e)
+
+        private void Add_WebMap_OnClick(object sender, EventArgs e)
         {
             _webMapGoogle = new WebMapGoogle();
             _webMapGoogle.Visible = true;
@@ -65,9 +61,6 @@ namespace Test
                 DConsole.WriteLine("GPS tracking started");
                 new T().Start();
             }
-
-           
-
         }
     }
 }

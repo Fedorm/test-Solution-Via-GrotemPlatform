@@ -26,6 +26,7 @@ Button {
     margin-top: 2%;
     text-align: center;
     width: 75%;
+  
 }
 
 .CssButton {
@@ -36,6 +37,7 @@ Button {
     margin-top: 2%;
     text-align: center;
     width: 50%;
+
 }
 
 .ChangeCssButton {

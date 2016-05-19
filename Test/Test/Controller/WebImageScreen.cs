@@ -16,14 +16,14 @@ namespace Test
         {
             var vl = new VerticalLayout();
             AddChild(vl);
-
+            //_webImage.Url = "http://goo.gl/muPIv2";
             _webImage = new WebImage();
             _webImage.Visible = true;
             _webImage.CssClass = "WebImage";
             _webImage.Id = "ID Of Web Image";
             _webImage.UrlType = "Absolute";
-            //_webImage.Url = "http://goo.gl/muPIv2";
-            _webImage.Url = "https://goo.gl/ttQ0Rb";
+          
+            _webImage.Url = "http://goo.gl/DqSUF7";
 
             vl.AddChild(_webImage);
             vl.AddChild(new Button("Back", Back_OnClick));
