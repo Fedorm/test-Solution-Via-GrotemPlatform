@@ -26,6 +26,7 @@ Button {
     margin-top: 2%;
     text-align: center;
     width: 75%;
+  
 }
 
 .CssButton {
@@ -36,6 +37,7 @@ Button {
     margin-top: 2%;
     text-align: center;
     width: 50%;
+
 }
 
 .ChangeCssButton {
@@ -273,4 +275,9 @@ Button {
     margin-right: 10%;
     height: 80%;
     width: 80%;
+}
+
+.ScrollView {
+      height: 100%;
+    width: 100%;
 }

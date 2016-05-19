@@ -1,7 +1,7 @@
 ﻿using System;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
-using Test.Model.Document;
+//using Test.Model.Document;
 
 namespace Test
 {
@@ -49,11 +49,11 @@ namespace Test
             Camera.MakeSnapshot(fileName, 500,
                 delegate
                 {
-                    var photo = new Photos();
-                    photo.Id = id;
-                    photo.FileName = fileName;
-                    photo.Save();
-                    UpdateSyncButton();
+                    //var photo = new Photos();
+                    //photo.Id = id;
+                    //photo.FileName = fileName;
+                    //photo.Save();
+                   UpdateSyncButton();
                 }
                 );
         }

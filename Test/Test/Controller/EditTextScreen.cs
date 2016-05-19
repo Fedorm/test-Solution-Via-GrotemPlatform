@@ -36,12 +36,14 @@ namespace Test
             _textEditText = new EditText();
             _textEditText.CssClass = "EditText";
             _textEditText.Text = "PLEASE CHANGE MY TEXT";
-//            _textEditText.Length = 2;
-//            _textEditText.Required = true;
+            _textEditText.AutoFocus = true;
+            //_textEditText.Length = 2;
+            //_textEditText.Required = true;
 
             _placeholderEditText = new EditText();
             _placeholderEditText.CssClass = "EditText";
             _placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
+            
 
             _notEnabledEditText = new EditText();
             _notEnabledEditText.Text = "NOT ENABLED EDIT TEXT";

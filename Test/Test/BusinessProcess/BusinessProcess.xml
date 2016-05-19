@@ -16,7 +16,12 @@
       <Action Name="MediaPlayerScreen" NextStep="MediaPlayerScreen"></Action>
       <Action Name="WebScreen" NextStep="WebScreen"></Action>
       <Action Name="SwipeScreen" NextStep="SwipeScreen"></Action>
+      <Action Name="DatabaseScreen" NextStep="DatabaseScreen"></Action>
+      <Action Name="DialogScreen" NextStep="DialogScreen"></Action>
       <Action Name="TestXMLScreen" NextStep="TestXMLScreen"></Action>
+      <Action Name="CameraPhoneGpsScreen" NextStep="CameraPhoneGpsScreen"></Action>
+      <Action Name="FileSystemScreen" NextStep="FileSystemScreen"></Action>
+      <Action Name="ComponentScreen" NextStep="ComponentScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -58,7 +63,12 @@
     </Step>
     <Step Name="SwipeHorizontalLayoutScreen" Controller="SwipeHorizontalLayoutScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="SwipeVerticalLayoutScreen" Controller="SwipeVerticalLayoutScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="DatabaseScreen" Controller="DatabaseScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="DialogScreen" Controller="DialogScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="TestXMLScreen" Controller="TestXMLScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="CameraPhoneGpsScreen" Controller="CameraPhoneGpsScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="FileSystemScreen" Controller="FileSystemScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="ComponentScreen" Controller="ComponentScreen" StyleSheet="Style\main.css"></Step>
     
 
   </Workflow>

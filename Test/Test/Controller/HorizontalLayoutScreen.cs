@@ -39,7 +39,7 @@ namespace Test
 
         private void Hl_OnClick(object sender, EventArgs e)
         {
-            BusinessProcess.DoBack();
+             BusinessProcess.DoBack();
         }
 
         private void Back_OnClick(object sender, EventArgs e)

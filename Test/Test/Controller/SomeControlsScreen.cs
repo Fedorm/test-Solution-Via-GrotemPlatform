@@ -8,6 +8,8 @@ namespace Test
     {
         private HorizontalLine _horizontalLine;
         private TextView _textView;
+        private EditText _textEditText;
+        
 
         public override void OnLoading()
         {
@@ -19,6 +21,11 @@ namespace Test
             var vl = new VerticalLayout();
             AddChild(vl);
 
+            _textEditText = new EditText();
+            _textEditText.CssClass = "EditText";
+            _textEditText.Text = "PLEASE CHANGE MY TEXT";
+            _textEditText.AutoFocus = true;
+
             _horizontalLine = new HorizontalLine();
             _horizontalLine.Visible = true;
             _horizontalLine.CssClass = "HorizontalLine";
@@ -27,6 +34,7 @@ namespace Test
             _textView = new TextView();
             _textView.Visible = true;
             _textView.CssClass = "TextView";
+            //_textView.Text = Translator.Translate("test");
             _textView.Text = "THIS IS TEST OF TEXTVIEW";
             _textView.Id = "ID Of TextView";
 
@@ -40,6 +48,8 @@ namespace Test
             vl.AddChild(new Button("Change Text Of TextView", ChangeTextOfTextView_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
         }
+
+
 
         private void Back_OnClick(object sender, EventArgs e)
         {

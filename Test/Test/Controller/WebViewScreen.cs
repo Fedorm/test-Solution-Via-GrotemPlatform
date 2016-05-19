@@ -1,4 +1,5 @@
 ﻿using System;
+using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 
 namespace Test
@@ -21,6 +22,8 @@ namespace Test
             _webView.CssClass = "WebView";
             _webView.Visible = true;
             _webView.Url = "https://youtube.com";
+
+            
 
             vl.AddChild(_webView);
             vl.AddChild(new Button("Back", Back_OnClick));

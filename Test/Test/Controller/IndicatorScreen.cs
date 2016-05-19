@@ -21,6 +21,7 @@ namespace Test
 
             _invisibleIndicator = new Indicator();
             _invisibleIndicator.CssClass = "Indicator";
+            _invisibleIndicator.Visible=true;
 
             _cssIndicator = new Indicator();
             _cssIndicator.CssClass = "Indicator";

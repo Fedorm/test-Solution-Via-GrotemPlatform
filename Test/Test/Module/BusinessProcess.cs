@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 using System.Xml;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
@@ -61,16 +61,17 @@ namespace Test
             //return Screen.CreateScreen("Test." + name);
             //full type name should be specified 
 
-            Screen scr = Screen.CreateScreen("Test." + name); //full type name should be specified
-            System.IO.Stream s = null;
-            String path = String.Format(@"Screen\{0}.xml", name);
+            //var scr = Screen.CreateScreen("Test." + name); //full type name should be specified
+            Screen scr = (Screen)Application.CreateInstance("Test." + name); //full type name should be specified
+            Stream s = null;
+            var path = string.Format(@"Screen\{0}.xml", name);
             try
             {
                 s = Application.GetResourceStream(path); //try to find markup resource
             }
             catch
             {
-                DConsole.WriteLine(String.Format("Resource {0} has not been found", path));
+                DConsole.WriteLine(string.Format("Resource {0} has not been found", path));
             }
 
             if (s != null)
