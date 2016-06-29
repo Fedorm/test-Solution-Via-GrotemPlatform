@@ -3,6 +3,8 @@ using System.Net;
 using System.Text;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
+using WebRequest = BitMobile.ClientModel3.WebRequest;
+
 
 namespace Test
 {
@@ -61,17 +63,37 @@ namespace Test
 
         private void MakeWebRequest_OnClick(object sender, EventArgs e)
         {
-            var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
-            DConsole.WriteLine("Web Request Created");
-            var svcCredentials =
-                Convert.ToBase64String(Encoding.ASCII.GetBytes("fm" + ":" + "fm"));
-            req.Headers.Add("Authorization", "Basic " + svcCredentials);
-            DConsole.WriteLine("Headers added");
-            using (var resp = req.GetResponse())
-            {
-            }
-            DConsole.WriteLine("The response is received");
+
+            //var req = Web.Request();
+            //req.Host = "http://bitmobile1.bt/";
+            //req.UserName = "sr";
+            //req.Password = "sr";
+            //req.Timeout = "00:02:00";
+            //req.Get("http://bitmobile1.bt/bitmobile/superagent/device/GetUserId");
+            //DConsole.WriteLine("Authorization OK!");
+
+            var request = new BitMobile.ClientModel3.WebRequest();
+            request.Host = "http://bitmobile1.bt/";
+            request.UserName = "sr";
+            request.Password = "sr";
+
+            request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId" ,(o, args) => { DConsole.WriteLine(args.Result); });
+
+            
+
+
+            //var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
+            //DConsole.WriteLine("Web Request Created");
+            //var svcCredentials =
+            //    Convert.ToBase64String(Encoding.ASCII.GetBytes("sr" + ":" + "sr"));
+            //req.Headers.Add("Authorization", "Basic " + svcCredentials);
+            //DConsole.WriteLine("Headers added");
+            //using (var resp = req.GetResponse())
+            //{
+            //}
+            //DConsole.WriteLine("The response is received");
         }
+        
 
         private void ButtonScreen_OnClick(object sender, EventArgs e)
         {
@@ -120,7 +142,8 @@ namespace Test
 
         private void ExitButton_OnClick(object sender, EventArgs e)
         {
-            Application.Terminate();
+            
+            Application.Logout();
         }
 
         private void TestXMLScreen_OnClick(object sender, EventArgs e)

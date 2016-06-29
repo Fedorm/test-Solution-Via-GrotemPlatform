@@ -9,6 +9,7 @@
     <c:Button Id="_textButton" Text="TextButton" OnClick="ShowTextView_OnClick" Visible="false" />
     <c:Button Id="_visibleButton" Text="VisibleButton" />
     <c:Button Id="_changeVisibilityButton" Text="HIDE VISIBLE BUTTON" OnClick="ChangeVisibility_OnClick" />
+    
 
     <s:Push Id="outlet" Value="$_textButton" />
     <c:TextView Id="_firstTextView" Text="TextView" />

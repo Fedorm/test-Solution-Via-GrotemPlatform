@@ -38,7 +38,7 @@ namespace Test
             _image.Source = "Image\\cats.jpg";
             _image.Visible = true;
             _image.CssClass = "ImageForSwipeHorizontal";
-
+            
             _image2 = new Image();
             _image2.Source = "Image\\cat2.jpg";
             _image2.Visible = true;

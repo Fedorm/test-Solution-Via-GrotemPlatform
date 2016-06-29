@@ -30,6 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="BusinessProcess.W, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\Lib\BusinessProcess.W.dll</HintPath>
+    </Reference>
     <Reference Include="ClientModel3.W, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK\Lib\ClientModel3.W.dll</HintPath>
@@ -154,9 +159,7 @@
     <EmbeddedResource Include="Translation\ru.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Screen\DatabaseScreen.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

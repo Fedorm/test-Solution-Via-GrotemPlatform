@@ -11,11 +11,13 @@ namespace Test
         private Button _newButton;
         private Button _textButton;
         private VerticalLayout _vl;
+        Thread thread = new Thread();
 
 
         public override void OnLoading()
         {
-            Initialize();
+            Initialize();          
+            
         }
 
         private void Initialize()
@@ -40,6 +42,7 @@ namespace Test
             _textButton = new Button();
             _textButton.Text = "TextButton";
             _textButton.OnClick += ChangeText_OnClick;
+    
 
             _vl.AddChild(new Button("Unhide Button", Visible_OnClick));
 
@@ -49,6 +52,7 @@ namespace Test
             _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
             _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
+            _vl.AddChild(new Button("Wait", Wait_OnClick));
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
@@ -64,9 +68,15 @@ namespace Test
             }
         }
 
+
+        private void Wait_OnClick(object sender, EventArgs e)
+        {
+            
+            thread.Sleep(3000);
+        }
         private void Back_OnClick(object sender, EventArgs e)
         {
-           
+          
             BusinessProcess.DoBack();
         }
 

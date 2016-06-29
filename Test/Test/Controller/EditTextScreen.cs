@@ -31,7 +31,7 @@ namespace Test
             _cssEditText = new EditText();
             _cssEditText.CssClass = "EditText";
             _cssEditText.Text = "CHANGE MY CSS";
-            _cssEditText.Id = "ID Of Css EditText";
+            _cssEditText.Id = "Id Of Css EditText";
 
             _textEditText = new EditText();
             _textEditText.CssClass = "EditText";
@@ -43,8 +43,7 @@ namespace Test
             _placeholderEditText = new EditText();
             _placeholderEditText.CssClass = "EditText";
             _placeholderEditText.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
-            
-
+           
             _notEnabledEditText = new EditText();
             _notEnabledEditText.Text = "NOT ENABLED EDIT TEXT";
             _notEnabledEditText.Enabled = false;
