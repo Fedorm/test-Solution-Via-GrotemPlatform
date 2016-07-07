@@ -10,6 +10,7 @@ namespace Test
 
         public override void OnLoading()
         {
+
             Initialize();
         }
 
@@ -20,13 +21,22 @@ namespace Test
             vl.AddChild(new Button("Test simple toast", Toast_OnButtonClick));
             vl.AddChild(new Button("Test snackbar with OK button", TestSnackbar_OnButtonClick));
 
+            vl.AddChild(new Button("Syncrho", Synchronization));
+
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
-        void BackButton_OnClick(object sender, EventArgs e)
+  
+        void Synchronization(object sender, EventArgs e)
         {
-            BusinessProcess.DoBack();
+            var db = new Database();
+            db.PerformSync(@"http://192.168.106.141/bitmobile/synchro/device", "sr", "sr", OnSyncComplete, "sync complete");
+            DConsole.WriteLine("Synchronization OK!");
         }
+        private void OnSyncComplete(object sender, ResultEventArgs<bool> resultEventArgs)
+        {
+        }
+
         private void TestSnackbar_OnButtonClick(object sender, EventArgs eventArgs)
         {
             Toast.MakeSnackbar("Some text", "OK", SnackBar_OnOkButtonClickedHandler, "OK");

@@ -1,14 +1,18 @@
-﻿using BitMobile.ClientModel3;
+﻿using System;
+using System.Text;
+using BitMobile.ClientModel3;
 
 namespace Test
 {
     public class Solution : Application
     {
+        private System.String q = " ";
         public override void OnCreate()
         {
-            DB.Init();
+            //DB.Init();
             BusinessProcess.Init();
             DConsole.WriteLine(Translator.Translate("greeting"));
+           
         }
 
         public override void OnShake()

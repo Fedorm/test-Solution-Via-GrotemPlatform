@@ -11,11 +11,13 @@ namespace Test
         private Button _newButton;
         private Button _textButton;
         private VerticalLayout _vl;
+        
         Thread thread = new Thread();
 
 
         public override void OnLoading()
         {
+
             Initialize();          
             
         }
@@ -53,6 +55,7 @@ namespace Test
             _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
             _vl.AddChild(new Button("Wait", Wait_OnClick));
+          
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace Test
                 _invisibleButton.Visible = true;
             }
         }
-
+      
 
         private void Wait_OnClick(object sender, EventArgs e)
         {
@@ -123,10 +126,11 @@ namespace Test
 
         private void AddNewDialog_OnClick(object sender, EventArgs e)
         {
-            //System.Threading.Thread.Sleep(10000);
-            FileSystem.SyncShared();
-            Dialog.Message("Success");
-       
-            }
+            DConsole.WriteLine($"{string.Empty.Length}"); // тихонько падает
+            DConsole.WriteLine(string.Empty); // выполняется корректно (пропускается строка)
+            //DConsole.WriteLine($"{"".Length}"); // выводит 0
+
+
+        }
         }
     }
