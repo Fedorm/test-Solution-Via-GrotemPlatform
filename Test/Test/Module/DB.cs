@@ -5,10 +5,10 @@ namespace Test
 {
     public class DB
     {
-       public static Database db = new Database();
+     
         public static void Init()
         {
-            
+           var db = new Database();
             if (!db.Exists)
             {
                 DConsole.WriteLine("DB is creating...");
@@ -39,15 +39,15 @@ namespace Test
             qry.Execute();
         }
 
-       public void Synchronization(object sender, EventArgs e)
-        {
+       //public void Synchronization(object sender, EventArgs e)
+       // {
            
-            db.PerformSync(@"http://bitmobile1.bt/bitmobileX/superagent/device", "sr", "sr", OnSyncComplete, "sync complete");
-            DConsole.WriteLine("Synchronization OK!");
-        }
-        private void OnSyncComplete(object sender, ResultEventArgs<bool> resultEventArgs)
-        {
-        }
+       //     db.PerformSync(@"http://bitmobile1.bt/bitmobileX/superagent/device", "sr", "sr", OnSyncComplete, "sync complete");
+       //     DConsole.WriteLine("Synchronization OK!");
+       // }
+       // private void OnSyncComplete(object sender, ResultEventArgs<bool> resultEventArgs)
+       // {
+       // }
 
     }
 }

@@ -48,6 +48,7 @@ namespace Test
             vl2.AddChild(new Button("Component Screen", ComponentScreen_OnClick));
             vl2.AddChild(new Button("Scroll To First Layout", ScrollToFirstLayout_OnClick));
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
+            vl2.AddChild(new Button("Test Bugs", TestBugsScreen_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
 
             _scrollView.AddChild(vl);
@@ -183,6 +184,10 @@ namespace Test
         private void ComponentScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("ComponentScreen");
+        }
+        private void TestBugsScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("TestBugsScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)
