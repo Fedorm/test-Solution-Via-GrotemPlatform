@@ -50,6 +50,7 @@ namespace Test
             _phoneEditText.Keyboard = "phone";
 
             _autoEditText.Text = "Auto Edit Text";
+
             _defaultEditText.Text = "Default Edit Text";
             _numericEditText.Text = "Numeric Edit Text";
             _emailEditText.Text = "Email Edit Text";
@@ -62,7 +63,9 @@ namespace Test
 //            _phoneEditText.OnChange += Back_OnClick;
 
             _onGetFocusEditText.OnGetFocus += Back_OnClick;
-            _onLostFocusEditText.OnLostFocus += Back_OnClick;
+            _onLostFocusEditText.OnLostFocus += ChangeCss;
+
+           
 
             vl.AddChild(_autoEditText);
             vl.AddChild(_defaultEditText);
@@ -78,6 +81,21 @@ namespace Test
         private void Back_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
+        }
+
+        private void ChangeCss(object sender, EventArgs e)
+        {
+            if (_autoEditText.CssClass== "EditText")
+            {
+                _autoEditText.CssClass = "CssEditText";
+                _autoEditText.Refresh();
+            }
+            else
+            {
+                _autoEditText.CssClass = "EditText";
+                               _autoEditText.Refresh();
+
+            }
         }
     }
 }

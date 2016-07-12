@@ -6,7 +6,6 @@ namespace Test
 {
     public class Solution : Application
     {
-        private System.String q = " ";
         public override void OnCreate()
         {
             //DB.Init();

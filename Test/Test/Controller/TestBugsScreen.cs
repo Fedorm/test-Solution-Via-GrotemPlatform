@@ -25,10 +25,12 @@ namespace Test
 
 
             vl.AddChild(new Button("Back", Back_OnClick));
-            vl.AddChild(new Button("Test Bool", CheckListDecimal_OnLostFocus));
+           
+
+
+
+
         }
-
-
 
 
         private void TestSnackbar_OnButtonClick(object sender, EventArgs eventArgs)
@@ -51,16 +53,6 @@ namespace Test
             BusinessProcess.DoBack();
         }
 
-        internal void CheckListDecimal_OnLostFocus(object sender, EventArgs e)
-        {
-            var val = true;
-            DConsole.WriteLine("1 var val = true; CheckNotBool(val);");
-            CheckNotBool(val);
-        }
 
-        private void CheckNotBool(bool val)
-        {
-            DConsole.WriteLine("Внутри функции CheckNotBool. значение равно = " + val);
-        }
     }
 }
