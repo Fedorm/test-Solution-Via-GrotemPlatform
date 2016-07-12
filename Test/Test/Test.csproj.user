@@ -3,6 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\TestSolution\SDK\Browser\Windows.exe</StartProgram>
-    <StartArguments>-d package.txt 192.168.104.83</StartArguments>
+    <StartArguments>-d package.txt 192.168.104.5</StartArguments>
   </PropertyGroup>
 </Project>

@@ -10,6 +10,10 @@ namespace Test
 
         public override void OnLoading()
         {
+            //DConsole.WriteLine("Проверимка вообще проброс ошибочек");
+            //var nolusichek = 0;
+            //var res = 10 / nolusichek;
+            //DConsole.WriteLine("поделили на нолик. есть ошибка. ");
 
             Initialize();
         }
