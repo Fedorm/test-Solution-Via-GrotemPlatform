@@ -7,6 +7,9 @@ namespace Test
     public class ImageScreen : Screen
     {
         private Image _image;
+        private Image _imageFromCamera;
+        private Image _imageFromShared;
+        private Image _imageFromPrivate;
         //private Image poleviImage;
 
         public override void OnLoading()
@@ -24,13 +27,26 @@ namespace Test
             _image.CssClass = "Image";
             _image.Id = "ID Of Image";
 
+            _imageFromCamera = new Image();
+            _imageFromCamera.Source= @"~\private\test.jpg";
+
+            _imageFromPrivate = new Image();
+            _imageFromShared = new Image();
+
+
+            _imageFromPrivate.Source = @"~\private\testprivate.jpg";
+            _imageFromShared.Source = @"~\shared\catalog.accounts\0cb35078-e7c7-41c2-bc6d-b587c14b7b7f\testpict2.jpg";
+
+
             //poleviImage = new Image();
             //poleviImage.CssClass = "cats";
 
-            vl.AddChild(new Button("INVISIBLE IMAGE", Visible_OnClick));
-            vl.AddChild(new Button("Change CSS Image", ChangeCssImage_OnClick));
+            //vl.AddChild(new Button("INVISIBLE IMAGE", Visible_OnClick));
+            //vl.AddChild(new Button("Change CSS Image", ChangeCssImage_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
-            vl.AddChild(_image);
+            //vl.AddChild(_imageFromCamera);
+            vl.AddChild(_imageFromShared);
+            vl.AddChild(_imageFromPrivate);
             //vl.AddChild(poleviImage);
             //vl.OnClick += vl_OnClick;
 

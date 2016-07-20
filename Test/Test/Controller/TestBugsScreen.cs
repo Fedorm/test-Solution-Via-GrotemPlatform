@@ -6,30 +6,30 @@ namespace Test
 {
     public class TestBugsScreen : Screen
     {
+        VerticalLayout vl;
+        private bool _foo;
 
 
         public override void OnLoading()
         {
-            //DConsole.WriteLine("Проверимка вообще проброс ошибочек");
-            //var nolusichek = 0;
-            //var res = 10 / nolusichek;
-            //DConsole.WriteLine("поделили на нолик. есть ошибка. ");
-
+          
             Initialize();
         }
 
         private void Initialize()
         {
-            var vl = new VerticalLayout();
+          vl = new VerticalLayout();
             AddChild(vl);
 
             vl.AddChild(new Button("Test simple toast", Toast_OnButtonClick));
             vl.AddChild(new Button("Test snackbar with OK button", TestSnackbar_OnButtonClick));
+            vl.AddChild(new Button("Test", Test_OnButtonClick));
 
 
 
             vl.AddChild(new Button("Back", Back_OnClick));
-           
+    
+
 
 
 
@@ -40,6 +40,17 @@ namespace Test
         private void TestSnackbar_OnButtonClick(object sender, EventArgs eventArgs)
         {
             Toast.MakeSnackbar("Some text", "OK", SnackBar_OnOkButtonClickedHandler, "OK");
+        }
+        private void Test_OnButtonClick(object sender, EventArgs eventArgs)
+        {
+            Bar();
+            DConsole.WriteLine("Foo? " + _foo + " Bar");
+            DConsole.WriteLine("123");
+
+        }
+        private void Bar()
+        {
+            _foo = true;
         }
 
         private void SnackBar_OnOkButtonClickedHandler(object sender, ResultEventArgs<bool> resultEventArgs)
@@ -56,6 +67,7 @@ namespace Test
         {
             BusinessProcess.DoBack();
         }
+
 
 
     }

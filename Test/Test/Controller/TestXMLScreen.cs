@@ -8,6 +8,7 @@ namespace Test
     {
         private readonly Button _textButton = null; //this variable will be assigned via screen xml template
         private readonly Button _visibleButton = null; //this variable will be assigned via screen xml template
+        private readonly Button _onEvent = null; //this variable will be assigned via screen xml template
         private EditText edit;
         private TextView text;
 
@@ -16,6 +17,8 @@ namespace Test
             //((Button)GetControl("_textButton", true)).OnClick += ChangeText_OnClick;
             //((Button)GetControl("_visibleButton", true)).OnClick += ChangeVisibility_OnClick;
             //((Button)GetControl("_changeVisibilityButton", true)).OnClick += ChangeVisibility_OnClick;
+            ((Button)GetControl("_onEvent", true)).OnClick += Back_OnClick;
+            //((Button)GetControl("_onEvent", true)).OnEvent = "Back";
 
             //text = (TextView)GetControl("_firstTextView", true);
             //edit = (EditText)GetControl("_firstEditText", true);

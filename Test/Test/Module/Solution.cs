@@ -8,6 +8,7 @@ namespace Test
     {
         public override void OnCreate()
         {
+
             //DB.Init();
             BusinessProcess.Init();
             DConsole.WriteLine(Translator.Translate("greeting"));

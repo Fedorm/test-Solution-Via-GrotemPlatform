@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Net;
-using System.Text;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 using WebRequest = BitMobile.ClientModel3.WebRequest;
-
 
 namespace Test
 {
@@ -22,6 +20,7 @@ namespace Test
             _scrollView = new ScrollView();
             var vl = new VerticalLayout();
             var vl2 = new VerticalLayout();
+            var vl3 = new VerticalLayout();
             _scrollView.Id = "Id Of ScrollView";
             _scrollView.OnScroll += ScrollIndex_OnScroll;
 
@@ -50,9 +49,11 @@ namespace Test
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
             vl2.AddChild(new Button("Test Bugs", TestBugsScreen_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
+            vl3.AddChild(new Button("EditServicesOrMaterialsScreen", EditServicesOrMaterialsScreen_OnClick));
 
             _scrollView.AddChild(vl);
             _scrollView.AddChild(vl2);
+            _scrollView.AddChild(vl3);
             AddChild(_scrollView);
         }
 
@@ -64,7 +65,6 @@ namespace Test
 
         private void MakeWebRequest_OnClick(object sender, EventArgs e)
         {
-
             //var req = Web.Request();
             //req.Host = "http://bitmobile1.bt/";
             //req.UserName = "sr";
@@ -73,14 +73,16 @@ namespace Test
             //req.Get("http://bitmobile1.bt/bitmobile/superagent/device/GetUserId");
             //DConsole.WriteLine("Authorization OK!");
 
-            var request = new BitMobile.ClientModel3.WebRequest();
-            request.Host = "http://bitmobile1.bt/";
+            var request = new WebRequest();
+            request.Host = "http:/192.168.106.141/";
             request.UserName = "sr";
             request.Password = "sr";
+            request.Timeout = "00:00:01";
+            //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
+            request.Get("http://192.168.106.141/bitmobile/synchro/device/GetUserId", test);
 
-            request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId" ,(o, args) => { DConsole.WriteLine(args.Result); });
+            //request.Get("http://professorweb.ru/", test);
 
-            
 
 
             //var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
@@ -94,7 +96,23 @@ namespace Test
             //}
             //DConsole.WriteLine("The response is received");
         }
-        
+
+        private static void test(object sender, ResultEventArgs<WebRequest.WebRequestResult> e)
+        {
+            DConsole.WriteLine("START");
+            if (!e.Result.Success)
+            {
+                DConsole.WriteLine(e.Result.Error.StatusCode.ToString());
+                DConsole.WriteLine(e.Result.Error.Name);
+                DConsole.WriteLine(e.Result.Error.Message);
+                
+            }
+            else
+            {
+                DConsole.WriteLine(e.Result.Result);
+            }
+            DConsole.WriteLine("END");
+        }
 
         private void ButtonScreen_OnClick(object sender, EventArgs e)
         {
@@ -143,7 +161,6 @@ namespace Test
 
         private void ExitButton_OnClick(object sender, EventArgs e)
         {
-            
             Application.Logout();
         }
 
@@ -181,13 +198,19 @@ namespace Test
         {
             BusinessProcess.DoAction("FileSystemScreen");
         }
+
         private void ComponentScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("ComponentScreen");
         }
+
         private void TestBugsScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("TestBugsScreen");
+        }
+  private void EditServicesOrMaterialsScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("EditServicesOrMaterialsScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)

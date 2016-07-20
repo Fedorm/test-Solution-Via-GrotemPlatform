@@ -49,7 +49,7 @@ namespace Test
             _urlEditText.Keyboard = "url";
             _phoneEditText.Keyboard = "phone";
 
-            _autoEditText.Text = "Auto Edit Text";
+            //_autoEditText.Text = "Auto Edit Text";
 
             _defaultEditText.Text = "Default Edit Text";
             _numericEditText.Text = "Numeric Edit Text";
@@ -65,6 +65,15 @@ namespace Test
             _onGetFocusEditText.OnGetFocus += Back_OnClick;
             _onLostFocusEditText.OnLostFocus += ChangeCss;
 
+            _autoEditText.Placeholder = "MORE THAN 5 CHARACTERS";
+
+            _autoEditText.Length = 5;
+            _defaultEditText.Length = 5;
+            _emailEditText.Length = 5;
+            //_numericEditText = 5;
+            _phoneEditText.Length = 5;
+            _urlEditText.Length = 5;
+            
            
 
             vl.AddChild(_autoEditText);

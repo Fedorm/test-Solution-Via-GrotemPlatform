@@ -66,7 +66,8 @@ namespace Test
 
         private void Camera_OnClick(object sender, EventArgs e)
         {
-            Camera.MakeSnapshot("//private//test.jpg", 5, DconsoleWriteLine);
+
+            Camera.MakeSnapshot("//private//testPrivate.jpg", 820, DconsoleWriteLine);
         }
 
         private void Gallery_OnClick(object sender, EventArgs e)

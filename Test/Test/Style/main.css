@@ -106,9 +106,9 @@ Button {
 .CssVerticalLayout {
     background-color: #2c3fc7;
     background-image: url(Image\cats.jpg);
-    height: 20%;
-    margin-top: 10%;
-    width: 50%;
+    height: 30%;
+    margin-top: 40%;
+    width: 70%;
 }
 
 .HorizontalLayout {

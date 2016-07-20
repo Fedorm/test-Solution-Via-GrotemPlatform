@@ -126,9 +126,9 @@ namespace Test
 
         private void AddNewDialog_OnClick(object sender, EventArgs e)
         {
-            DConsole.WriteLine($"{string.Empty.Length}"); // тихонько падает
+           /* DConsole.WriteLine($"{string.Empty.Length}");*/ // тихонько падает
             DConsole.WriteLine(string.Empty); // выполняется корректно (пропускается строка)
-            //DConsole.WriteLine($"{"".Length}"); // выводит 0
+            DConsole.WriteLine($"{"".Length}"); // выводит 0
 
 
         }
