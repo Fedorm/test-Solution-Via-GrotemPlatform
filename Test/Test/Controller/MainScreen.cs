@@ -75,11 +75,11 @@ namespace Test
 
             var request = new WebRequest();
             request.Host = "http:/192.168.106.141/";
-            request.UserName = "sr";
-            request.Password = "sr";
+            request.UserName = "s1r";
+            request.Password = "s1r";
             request.Timeout = "00:00:01";
             //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
-            request.Get("http://192.168.106.141/bitmobile/synchro/device/GetUserId", test);
+            request.Get("http://192.168.106.141/bitmobile/synchro2/device/GetUserId", test);
 
             //request.Get("http://professorweb.ru/", test);
 
@@ -161,7 +161,7 @@ namespace Test
 
         private void ExitButton_OnClick(object sender, EventArgs e)
         {
-            Application.Logout();
+            Application.Terminate();
         }
 
         private void TestXMLScreen_OnClick(object sender, EventArgs e)

@@ -47,3 +47,4 @@ C:\TestSolution\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\TestSolution\Test\Test\obj\Debug\Test.dll
 C:\TestSolution\Test\Test\obj\Debug\Test.pdb
 C:\TestSolution\Test\Test\bin\Debug\BusinessProcess.W.dll
+C:\TestSolution\Test\Test\bin\Debug\Mono.Data.Sqlite.dll

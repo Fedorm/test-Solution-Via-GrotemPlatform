@@ -86,8 +86,10 @@ Button {
     height: 5mm;
     margin-top: 2%;
     padding-top: 10%;
-    text-align: center;
+      horizontal-align: center;
+  vertical-align: center;
     width: 100%;
+    font-style: bold;
 }
 
 .CssTextView {
@@ -101,6 +103,7 @@ Button {
     padding-top: 10%;
     text-align: center;
     width: 100%;
+    font-style: italic;
 }
 
 .CssVerticalLayout {
