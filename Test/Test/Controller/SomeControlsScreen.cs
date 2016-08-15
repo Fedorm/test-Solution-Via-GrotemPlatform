@@ -35,7 +35,7 @@ namespace Test
             _textView.Visible = true;
             _textView.CssClass = "TextView";
             //_textView.Text = Translator.Translate("test");
-            _textView.Text = "THIS IS TEST OF TEXTVIEW";
+            _textView.Text = "THIS";
             _textView.Id = "ID Of TextView";
 
             vl.AddChild(new Button("Change Css Of HL", ChangeCSSofHL_OnClick));

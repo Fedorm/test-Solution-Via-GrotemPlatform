@@ -7,12 +7,11 @@ namespace Test
     public class TestBugsScreen : Screen
     {
         VerticalLayout vl;
-        private bool _foo;
-
+        public Database db;
 
         public override void OnLoading()
         {
-          
+       
             Initialize();
         }
 
@@ -21,9 +20,10 @@ namespace Test
           vl = new VerticalLayout();
             AddChild(vl);
 
-            vl.AddChild(new Button("Test simple toast", Toast_OnButtonClick));
-            vl.AddChild(new Button("Test snackbar with OK button", TestSnackbar_OnButtonClick));
-            vl.AddChild(new Button("Test", Test_OnButtonClick));
+            //vl.AddChild(new Button("Test simple toast", Toast_OnButtonClick));
+            //vl.AddChild(new Button("Test snackbar with OK button", TestSnackbar_OnButtonClick));
+            //vl.AddChild(new Button("Test", Test_OnButtonClick));
+       
 
 
 
@@ -35,6 +35,12 @@ namespace Test
 
 
         }
+        private void InitDb(object sender, EventArgs e)
+        {
+            db = new Database();
+            db.CreateFromModel();
+            DConsole.WriteLine("Initialize OK!");
+        }
 
 
         private void TestSnackbar_OnButtonClick(object sender, EventArgs eventArgs)
@@ -43,15 +49,10 @@ namespace Test
         }
         private void Test_OnButtonClick(object sender, EventArgs eventArgs)
         {
-            Bar();
-            DConsole.WriteLine("Foo? " + _foo + " Bar");
-            DConsole.WriteLine("123");
+         
 
         }
-        private void Bar()
-        {
-            _foo = true;
-        }
+       
 
         private void SnackBar_OnOkButtonClickedHandler(object sender, ResultEventArgs<bool> resultEventArgs)
         {
@@ -68,7 +69,23 @@ namespace Test
             BusinessProcess.DoBack();
         }
 
-
+        private void DbPerformSyncAsync(object sender, EventArgs e)
+        {
+            try
+            {
+                db.PerformSyncAsync(@"http://192.168.106.141/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                    "sync complete");
+                DConsole.WriteLine("DbPerformSyncAsync OK!");
+            }
+            catch (Exception ex)
+            {
+                DConsole.WriteLine(ex.Message);
+            }
+        }
+        private void OnSyncComplete(object sender, ResultEventArgs<bool> resultEventArgs)
+        {
+            DConsole.WriteLine("OnSyncComplete ok");
+        }
 
     }
 }

@@ -7,6 +7,7 @@ namespace Test
     public class WebMapGoogleScreen : Screen
     {
         private WebMapGoogle _webMapGoogle;
+        private HorizontalLayout hl;
         private VerticalLayout vl;
 
 
@@ -19,8 +20,9 @@ namespace Test
         {
             vl = new VerticalLayout();
             AddChild(vl);
+            hl = new HorizontalLayout();
 
-
+            vl.AddChild(hl);
             vl.AddChild(new Button("ID", ID_OnClick));
             vl.AddChild(new Button("Stop GPS", StopGPS_OnClick));
             vl.AddChild(new Button("Start GPS", StartTracking_OnClick));
@@ -33,6 +35,7 @@ namespace Test
         {
             BusinessProcess.DoBack();
         }
+
         private void StopGPS_OnClick(object sender, EventArgs e)
         {
             GPS.StopTracking();
@@ -50,11 +53,13 @@ namespace Test
             _webMapGoogle.CssClass = "WebMapGoogle";
             _webMapGoogle.Id = "ID OF WEB MAP GOOGLE";
             _webMapGoogle.AddMarker("marker", GPS.CurrentLocation.Latitude, GPS.CurrentLocation.Longitude, "red");
-            vl.AddChild(_webMapGoogle);
+            hl.AddChild(_webMapGoogle);
+            hl.Refresh();
             vl.Refresh();
+            
         }
 
-        void StartTracking_OnClick(object sender, EventArgs e)
+        private void StartTracking_OnClick(object sender, EventArgs e)
         {
             if (GPS.StartTracking())
             {
