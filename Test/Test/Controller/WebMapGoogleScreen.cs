@@ -38,6 +38,7 @@ namespace Test
 
         private void StopGPS_OnClick(object sender, EventArgs e)
         {
+          
             GPS.StopTracking();
         }
 

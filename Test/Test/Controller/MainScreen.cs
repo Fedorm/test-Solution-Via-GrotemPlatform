@@ -79,8 +79,8 @@ namespace Test
             request.Password = "s1r";
             request.Timeout = "00:00:01";
             //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
-            request.Get("http://192.168.106.141/bitmobile/synchro2/device/GetUserId", test);
-
+            request.Get("http://192.168.0.152/bitmobile/synchro2/device/GetUserId", test);
+            
             //request.Get("http://professorweb.ru/", test);
 
 

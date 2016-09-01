@@ -43,7 +43,7 @@ namespace Test
         {
             try
             {
-                FileSystem.SyncShared("http://192.168.106.141/bitmobile/synchro/", "sr", "sr");
+                FileSystem.SyncShared("http://192.168.0.152/bitmobile/synchro/", "sr", "sr");
                 //FileSystem.HandleLastError("ERROR");
                 DConsole.WriteLine("SYNC SHARED OK");
             }
@@ -56,7 +56,7 @@ namespace Test
 
         private void UploadPrivate_OnClick(object sender, EventArgs e)
         {
-            FileSystem.UploadPrivate("http://192.168.106.141/bitmobile/synchro/", "sr", "sr");
+            FileSystem.UploadPrivate("http://192.168.0.152/bitmobile/synchro/", "sr", "sr");
             //FileSystem.HandleLastError("ERROR");
             DConsole.WriteLine("UPLOAD PRIVATE OK");
 
@@ -120,6 +120,7 @@ namespace Test
 
         private void Back_OnClick(object sender, EventArgs e)
         {
+            
             BusinessProcess.DoBack();
         }
     }

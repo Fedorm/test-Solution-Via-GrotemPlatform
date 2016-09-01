@@ -11,15 +11,13 @@ namespace Test
         private Button _newButton;
         private Button _textButton;
         private VerticalLayout _vl;
-        
-        Thread thread = new Thread();
+
+        private readonly Thread thread = new Thread();
 
 
         public override void OnLoading()
         {
-
-            Initialize();          
-            
+            Initialize();
         }
 
         private void Initialize()
@@ -44,8 +42,7 @@ namespace Test
             _textButton = new Button();
             _textButton.Text = "TextButton";
             _textButton.OnClick += ChangeText_OnClick;
-    
-
+            
             _vl.AddChild(new Button("Unhide Button", Visible_OnClick));
 
             _vl.AddChild(_invisibleButton);
@@ -55,7 +52,7 @@ namespace Test
             _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
             _vl.AddChild(new Button("Wait", Wait_OnClick));
-          
+            _vl.AddChild(new Button("Toast", Wait2_OnClick));
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
@@ -70,16 +67,22 @@ namespace Test
                 _invisibleButton.Visible = true;
             }
         }
-      
+
 
         private void Wait_OnClick(object sender, EventArgs e)
         {
-            
             thread.Sleep(3000);
+        }  private void Wait2_OnClick(object sender, EventArgs e)
+        {
+            Toast.MakeSnackbar("Some text", "OK", SnackBar_OnOkButtonClickedHandler, "OK");
         }
+        private void SnackBar_OnOkButtonClickedHandler(object sender, ResultEventArgs<bool> resultEventArgs)
+        {
+            Toast.MakeToast(sender + " button clicked on snackbar");
+        }
+
         private void Back_OnClick(object sender, EventArgs e)
         {
-          
             BusinessProcess.DoBack();
         }
 
@@ -126,11 +129,9 @@ namespace Test
 
         private void AddNewDialog_OnClick(object sender, EventArgs e)
         {
-           /* DConsole.WriteLine($"{string.Empty.Length}");*/ // тихонько падает
+            /* DConsole.WriteLine($"{string.Empty.Length}");*/ // тихонько падает
             DConsole.WriteLine(string.Empty); // выполняется корректно (пропускается строка)
             DConsole.WriteLine($"{"".Length}"); // выводит 0
-
-
-        }
         }
     }
+}

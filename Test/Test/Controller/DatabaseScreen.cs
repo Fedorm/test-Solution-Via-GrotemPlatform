@@ -43,16 +43,18 @@ namespace Test
             db = new Database();
             db.CreateFromModel();
             DConsole.WriteLine("Initialize OK!");
+            
         }
 
         private void ClearCache(object sender, EventArgs e)
         {
             Application.ClearCache();
             DConsole.WriteLine("Cache cleared");
+            
         }
   private void SendDatabase(object sender, EventArgs e)
   {
-      Application.SendDatabase("http://192.168.106.141/bitmobile/synchro2/filesystem/log", "Sr", "Sr");
+      Application.SendDatabase("http://192.168.0.152/bitmobile/synchro2/filesystem/log", "Sr", "Sr");
             DConsole.WriteLine("Database was sent");
         }
 
@@ -69,7 +71,7 @@ namespace Test
         {
             try
             {
-                db.PerformSync(@"http://192.168.106.141/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformSync OK!");
             }
@@ -84,7 +86,7 @@ namespace Test
             try
             {
                 if(db.SyncIsActive ==false)
-                db.PerformSyncAsync(@"http://192.168.106.141/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformSyncAsync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformSyncAsync OK!");
             }
@@ -98,7 +100,7 @@ namespace Test
         {
             try
             {
-                db.PerformFullSyncAsync(@"http://192.168.106.141/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformFullSyncAsync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformFullSyncAsync OK!");
             }
@@ -112,7 +114,7 @@ namespace Test
         {
             try
             {
-                db.PerformFullSync(@"http://192.168.106.141/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformFullSync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformFullSync OK!");
             }
@@ -126,7 +128,7 @@ namespace Test
         {
             try
             {
-                db.PerformFullSync(@"http://192.168.106.141/bitmobile/synchro2/device", "srm", "srm", OnSyncComplete,
+                db.PerformFullSync(@"http://192.168.0.152/bitmobile/synchro2/device", "srm", "srm", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformFullSync OK!");
             }

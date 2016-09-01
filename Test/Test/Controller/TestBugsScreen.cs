@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 
@@ -8,11 +9,20 @@ namespace Test
     {
         VerticalLayout vl;
         public Database db;
-
+      
+      
         public override void OnLoading()
         {
-       
+            GpsTracking.IsBestAccuracy = true;
+            GpsTracking.MinInterval = 2;
+            GpsTracking.MinDistance = 2;
+            GpsTracking.DistanceFilter = 1;
+            GpsTracking.SendInterval = 5;
+
+            //На следующей строчке падает.
+            var isStart = GpsTracking.Start();
             Initialize();
+            
         }
 
         private void Initialize()
