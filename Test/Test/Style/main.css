@@ -208,14 +208,14 @@ Button {
 
 .CssMemoEdit {
     
-    background-color: #fc3936;
-    color: #f9f0f6;
-    font-size: 80%;
-    height: 5mm;
-    margin-top: 2%;
-    padding-top: 10%;
-    placeholder-color: #470d6f;
-    width: 100%;
+    background-color: #4a4b5e;
+  color: #ffffff;
+  height: 8.25sp auto;
+  margin-bottom: 0.5sp;
+  padding-left: 3sp;
+  padding-right: 3sp;
+  placeholder-color: #a2a2aa;
+  width: 100%;
 }
 
 .cats {

@@ -56,7 +56,6 @@ C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\Common.W.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\DbEngine.W.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\ILInterpreter.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\Application.W.dll
-C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\Mono.Data.Sqlite.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.pdb

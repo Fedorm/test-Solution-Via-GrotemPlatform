@@ -24,7 +24,7 @@ namespace Test
             AddChild(vl);
 
             _invisibeMemoEdit = new MemoEdit();
-            _invisibeMemoEdit.CssClass = "MemoEdit";
+            _invisibeMemoEdit.CssClass = "CssMemoEdit";
             _invisibeMemoEdit.Visible = true;
             _invisibeMemoEdit.Text = "PLEASE HIDE ME";
 

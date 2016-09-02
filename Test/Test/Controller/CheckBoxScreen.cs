@@ -26,11 +26,13 @@ namespace Test
             _checkBoxTrue.Visible = true;
             _checkBoxTrue.CssClass = "CheckBox";
             _checkBoxTrue.Checked = true;
+            _checkBoxTrue.Enabled = false;
 
             _checkBoxFalse = new CheckBox();
             _checkBoxFalse.Visible = true;
             _checkBoxFalse.CssClass = "CheckBox";
             _checkBoxFalse.Checked = false;
+            _checkBoxFalse.Enabled = true;
 
             _cssCheckBox = new CheckBox();
             _cssCheckBox.CssClass = "CheckBox";
@@ -78,11 +80,13 @@ namespace Test
             if (_cssCheckBox.CssClass == "CheckBox")
             {
                 _cssCheckBox.CssClass = "CssCheckBox";
+                _cssCheckBox.Enabled = false;
                 _cssCheckBox.Refresh();
             }
             else if (_cssCheckBox.CssClass == "CssCheckBox")
             {
                 _cssCheckBox.CssClass = "CheckBox";
+                _cssCheckBox.Enabled = true;
                 _cssCheckBox.Refresh();
             }
         }

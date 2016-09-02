@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Net;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
-using WebRequest = BitMobile.ClientModel3.WebRequest;
 
 namespace Test
 {
@@ -12,6 +10,10 @@ namespace Test
 
         public override void OnLoading()
         {
+            GPS.StartTracking();
+            DConsole.WriteLine(DateTime.Now.ToLongTimeString());
+            DConsole.WriteLine(GPS.CurrentLocation.Latitude.ToString());
+            DConsole.WriteLine(GPS.CurrentLocation.Longitude.ToString());
             Initialize();
         }
 
@@ -79,10 +81,10 @@ namespace Test
             request.Password = "s1r";
             request.Timeout = "00:00:01";
             //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
-            request.Get("http://192.168.0.152/bitmobile/synchro2/device/GetUserId", test);
-            
-            //request.Get("http://professorweb.ru/", test);
+            //request.Get("http://192.168.0.152/bitmobile/synchro2/device/GetUserId", test);
+            request.Get("http://bitmobile1.bt/bitmobile3/synchro2/device/GetUserId", test);
 
+            //request.Get("http://professorweb.ru/", test);
 
 
             //var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
@@ -105,7 +107,6 @@ namespace Test
                 DConsole.WriteLine(e.Result.Error.StatusCode.ToString());
                 DConsole.WriteLine(e.Result.Error.Name);
                 DConsole.WriteLine(e.Result.Error.Message);
-                
             }
             else
             {
@@ -208,7 +209,8 @@ namespace Test
         {
             BusinessProcess.DoAction("TestBugsScreen");
         }
-  private void EditServicesOrMaterialsScreen_OnClick(object sender, EventArgs e)
+
+        private void EditServicesOrMaterialsScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("EditServicesOrMaterialsScreen");
         }

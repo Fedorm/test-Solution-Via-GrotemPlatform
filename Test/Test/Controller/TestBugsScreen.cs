@@ -18,13 +18,15 @@ namespace Test
             GpsTracking.MinDistance = 2;
             GpsTracking.DistanceFilter = 1;
             GpsTracking.SendInterval = 5;
+            GpsTracking.SendUrl = "http://bitmobile1.bt/bitmobile3";
+            GpsTracking.UserId = "";
 
             //На следующей строчке падает.
             var isStart = GpsTracking.Start();
             Initialize();
             
         }
-
+        
         private void Initialize()
         {
           vl = new VerticalLayout();
