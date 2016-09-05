@@ -30,6 +30,7 @@ namespace Test
             vl.AddChild(new Button("DB Perform Full Sync Async", DbPerformFullSyncAsync));
             vl.AddChild(new Button("Send Database", SendDatabase));
             vl.AddChild(new Button("Clear Cache", ClearCache));
+            vl.AddChild(new Button("Clear LOG", ClearLog));
             vl.AddChild(new Button("Status", Status));
             vl.AddChild(_textView);
 
@@ -52,7 +53,13 @@ namespace Test
             DConsole.WriteLine("Cache cleared");
             
         }
-  private void SendDatabase(object sender, EventArgs e)
+        private void ClearLog(object sender, EventArgs e)
+        {
+           db.ClearLog();
+            DConsole.WriteLine("Log cleared");
+
+        }
+        private void SendDatabase(object sender, EventArgs e)
   {
       Application.SendDatabase("http://192.168.0.152/bitmobile/synchro2/filesystem/log", "Sr", "Sr");
             DConsole.WriteLine("Database was sent");

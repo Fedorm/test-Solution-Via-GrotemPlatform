@@ -67,7 +67,7 @@
     <Compile Include="Controller\DialogScreen.cs" />
     <Compile Include="Controller\DatabaseScreen.cs" />
     <Compile Include="Controller\DockLayoutScreen.cs" />
-    <Compile Include="Controller\EditServicesOrMaterialsScreen.cs" />
+    <Compile Include="Controller\ApplicationScreen.cs" />
     <Compile Include="Controller\EditTextScreen.cs" />
     <Compile Include="Controller\FileSystemScreen.cs" />
     <Compile Include="Controller\HorizontalLayoutScreen.cs" />

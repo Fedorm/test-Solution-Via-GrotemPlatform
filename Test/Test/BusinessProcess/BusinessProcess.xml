@@ -23,7 +23,7 @@
       <Action Name="FileSystemScreen" NextStep="FileSystemScreen"></Action>
       <Action Name="ComponentScreen" NextStep="ComponentScreen"></Action>
       <Action Name="TestBugsScreen" NextStep="TestBugsScreen"></Action>
-      <Action Name="EditServicesOrMaterialsScreen" NextStep="EditServicesOrMaterialsScreen"></Action>
+      <Action Name="ApplicationScreen" NextStep="ApplicationScreen"></Action>
     </Step>
 
     <Step Name="YandexScreen" Controller="YandexScreen" StyleSheet="Style\main.css">  </Step>
@@ -72,7 +72,7 @@
     <Step Name="FileSystemScreen" Controller="FileSystemScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="ComponentScreen" Controller="ComponentScreen" StyleSheet="Style\main.css"></Step>
     <Step Name="TestBugsScreen" Controller="TestBugsScreen" StyleSheet="Style\main.css"></Step>
-    <Step Name="EditServicesOrMaterialsScreen" Controller="EditServicesOrMaterialsScreen" StyleSheet="Style\main.css"></Step>
+    <Step Name="ApplicationScreen" Controller="ApplicationScreen" StyleSheet="Style\main.css"></Step>
 
 
   </Workflow>

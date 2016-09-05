@@ -10,10 +10,7 @@ namespace Test
 
         public override void OnLoading()
         {
-            GPS.StartTracking();
-            DConsole.WriteLine(DateTime.Now.ToLongTimeString());
-            DConsole.WriteLine(GPS.CurrentLocation.Latitude.ToString());
-            DConsole.WriteLine(GPS.CurrentLocation.Longitude.ToString());
+           
             Initialize();
         }
 
@@ -51,7 +48,7 @@ namespace Test
             vl2.AddChild(new Button("ID Of ScrollView", IdOfScrollView_OnClick));
             vl2.AddChild(new Button("Test Bugs", TestBugsScreen_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
-            vl3.AddChild(new Button("EditServicesOrMaterialsScreen", EditServicesOrMaterialsScreen_OnClick));
+            vl3.AddChild(new Button("Application", ApplicationScreen_OnClick));
 
             _scrollView.AddChild(vl);
             _scrollView.AddChild(vl2);
@@ -210,9 +207,9 @@ namespace Test
             BusinessProcess.DoAction("TestBugsScreen");
         }
 
-        private void EditServicesOrMaterialsScreen_OnClick(object sender, EventArgs e)
+        private void ApplicationScreen_OnClick(object sender, EventArgs e)
         {
-            BusinessProcess.DoAction("EditServicesOrMaterialsScreen");
+            BusinessProcess.DoAction("ApplicationScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)
