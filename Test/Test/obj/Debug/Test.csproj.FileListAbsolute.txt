@@ -60,3 +60,15 @@ C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.csprojResolve
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.dll
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\obj\Debug\Test.pdb
 C:\Users\me\Documents\GitHub\TestSolution\Test\Test\bin\Debug\Mono.Data.Sqlite.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\Test.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\Test.pdb
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\BusinessProcess.W.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\ClientModel3.W.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\Common.W.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\DbEngine.W.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\ILInterpreter.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\Application.W.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\bin\Debug\Mono.Data.Sqlite.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\obj\Debug\Test.dll
+C:\Users\me\Documents\GitHub\TestSolutionTestDialogAndToast\Test\Test\obj\Debug\Test.pdb

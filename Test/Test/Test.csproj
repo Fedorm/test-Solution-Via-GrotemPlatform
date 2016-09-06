@@ -60,38 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ButtonScreen.cs" />
-    <Compile Include="Controller\CameraPhoneGpsScreen.cs" />
-    <Compile Include="Controller\CheckBoxScreen.cs" />
-    <Compile Include="Controller\ComponentScreen.cs" />
-    <Compile Include="Controller\DialogScreen.cs" />
-    <Compile Include="Controller\DatabaseScreen.cs" />
-    <Compile Include="Controller\DockLayoutScreen.cs" />
-    <Compile Include="Controller\ApplicationScreen.cs" />
-    <Compile Include="Controller\EditTextScreen.cs" />
-    <Compile Include="Controller\FileSystemScreen.cs" />
-    <Compile Include="Controller\HorizontalLayoutScreen.cs" />
-    <Compile Include="Controller\ImageScreen.cs" />
-    <Compile Include="Controller\IndicatorScreen.cs" />
-    <Compile Include="Controller\LayoutScreen.cs" />
-    <Compile Include="Controller\MediaPlayerScreen.cs" />
-    <Compile Include="Controller\MemoEditScreen.cs" />
-    <Compile Include="Controller\SecondEditTextScreen.cs" />
-    <Compile Include="Controller\SecondMemoEditScreen.cs" />
-    <Compile Include="Controller\SomeControlsScreen.cs" />
-    <Compile Include="Controller\SwipeHorizontalLayoutScreen.cs" />
-    <Compile Include="Controller\SwipeVerticalLayoutScreen.cs" />
-    <Compile Include="Controller\SwipeScreen.cs" />
-    <Compile Include="Controller\T.cs" />
-    <Compile Include="Controller\TestBugsScreen.cs" />
-    <Compile Include="Controller\TestHorizontalLayoutScreen.cs" />
-    <Compile Include="Controller\TestXMLScreen.cs" />
-    <Compile Include="Controller\VerticalLayoutScreen.cs" />
-    <Compile Include="Controller\WebImageScreen.cs" />
-    <Compile Include="Controller\WebMapGoogleScreen.cs" />
-    <Compile Include="Controller\WebScreen.cs" />
-    <Compile Include="Controller\WebViewScreen.cs" />
-    <Compile Include="Controller\YandexScreen.cs" />
     <Compile Include="Entities\Catalog\Accounts.cs" />
     <Compile Include="Entities\Catalog\Actions.cs" />
     <Compile Include="Entities\Catalog\Client.cs" />
@@ -132,7 +100,6 @@
     </Compile>
     <Compile Include="Module\Solution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Module\YandexPhoto.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model\metadata.xml" />
@@ -154,34 +121,8 @@
     <EmbeddedResource Include="BusinessProcess\BusinessProcess.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\cats.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Style\second.css" />
     <EmbeddedResource Include="Style\polev.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\cat3.jpg" />
-    <EmbeddedResource Include="Image\cat4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\cat2.jpg" />
-    <EmbeddedResource Include="Screen\TestXMLScreen.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\1.mp4" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Screen\ComponentScreen.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Screen\SomeComponent.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Translation\en.txt" />
@@ -191,7 +132,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Screen\EditServicesOrMaterialsScreen.xml" />
+    <Folder Include="Image\" />
+    <Folder Include="Screen\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
