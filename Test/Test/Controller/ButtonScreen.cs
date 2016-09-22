@@ -52,7 +52,8 @@ namespace Test
             _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
             _vl.AddChild(new Button("Wait", Wait_OnClick));
-            _vl.AddChild(new Button("Toast", Wait2_OnClick));
+            _vl.AddChild(new Button("Snackbar", Snackbar_OnClick));
+            _vl.AddChild(new Button("Toast", Toast_OnClick));
         }
 
         private void Visible_OnClick(object sender, EventArgs e)
@@ -72,9 +73,14 @@ namespace Test
         private void Wait_OnClick(object sender, EventArgs e)
         {
             thread.Sleep(3000);
-        }  private void Wait2_OnClick(object sender, EventArgs e)
+        }
+
+        private void Snackbar_OnClick(object sender, EventArgs e)
         {
             Toast.MakeSnackbar("Some text", "OK", SnackBar_OnOkButtonClickedHandler, "OK");
+        } private void Toast_OnClick(object sender, EventArgs e)
+        {
+            Toast.MakeToast("TEST TOAST");
         }
         private void SnackBar_OnOkButtonClickedHandler(object sender, ResultEventArgs<bool> resultEventArgs)
         {

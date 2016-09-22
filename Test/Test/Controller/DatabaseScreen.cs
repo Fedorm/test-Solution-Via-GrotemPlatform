@@ -61,7 +61,7 @@ namespace Test
         }
         private void SendDatabase(object sender, EventArgs e)
   {
-      Application.SendDatabase("http://192.168.0.152/bitmobile/synchro2/filesystem/log", "Sr", "Sr");
+      Application.SendDatabase("http://192.168.0.152/bitmobile/synchro3/filesystem/log", "Sr", "Sr");
             DConsole.WriteLine("Database was sent");
         }
 
@@ -78,7 +78,7 @@ namespace Test
         {
             try
             {
-                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro3/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformSync OK!");
             }
@@ -107,7 +107,7 @@ namespace Test
         {
             try
             {
-                db.PerformFullSyncAsync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformFullSyncAsync(@"http://192.168.0.152/bitmobile/synchro3/device", "Sr", "Sr", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformFullSyncAsync OK!");
             }
@@ -135,7 +135,7 @@ namespace Test
         {
             try
             {
-                db.PerformFullSync(@"http://192.168.0.152/bitmobile/synchro2/device", "srm", "srm", OnSyncComplete,
+                db.PerformFullSync(@"http://192.168.0.152/bitmobile/synchro3/device", "srm", "srm", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformFullSync OK!");
             }

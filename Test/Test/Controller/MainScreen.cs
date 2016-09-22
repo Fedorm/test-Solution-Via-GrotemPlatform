@@ -10,7 +10,9 @@ namespace Test
 
         public override void OnLoading()
         {
-           
+    
+            //На следующей строчке падает.
+            var isStart = GpsTracking.Start();
             Initialize();
         }
 
@@ -49,6 +51,7 @@ namespace Test
             vl2.AddChild(new Button("Test Bugs", TestBugsScreen_OnClick));
             vl2.AddChild(new Button("Exit", ExitButton_OnClick));
             vl3.AddChild(new Button("Application", ApplicationScreen_OnClick));
+            vl3.AddChild(new Button("Push", PushScreen_OnClick));
 
             _scrollView.AddChild(vl);
             _scrollView.AddChild(vl2);
@@ -73,13 +76,13 @@ namespace Test
             //DConsole.WriteLine("Authorization OK!");
 
             var request = new WebRequest();
-            request.Host = "http:/192.168.106.141/";
-            request.UserName = "s1r";
-            request.Password = "s1r";
+            request.Host = "http:/192.168.0.152/";
+            request.UserName = "srm";
+            request.Password = "srm";
             request.Timeout = "00:00:01";
             //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
-            //request.Get("http://192.168.0.152/bitmobile/synchro2/device/GetUserId", test);
-            request.Get("http://bitmobile1.bt/bitmobile3/synchro2/device/GetUserId", test);
+            request.Get("http://192.168.0.152/bitmobile/synchro3/device/GetUserId", test);
+            //request.Get("http://bitmobile1.bt/bitmobile3/synchro2/device/GetUserId", test);
 
             //request.Get("http://professorweb.ru/", test);
 
@@ -210,6 +213,10 @@ namespace Test
         private void ApplicationScreen_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoAction("ApplicationScreen");
+        }
+        private void PushScreen_OnClick(object sender, EventArgs e)
+        {
+            BusinessProcess.DoAction("PushScreen");
         }
 
         private void ScrollIndex_OnScroll(object sender, EventArgs e)

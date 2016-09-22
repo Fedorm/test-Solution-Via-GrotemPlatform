@@ -89,6 +89,7 @@
     <Compile Include="Controller\VerticalLayoutScreen.cs" />
     <Compile Include="Controller\WebImageScreen.cs" />
     <Compile Include="Controller\WebMapGoogleScreen.cs" />
+    <Compile Include="Controller\PushScreen.cs" />
     <Compile Include="Controller\WebScreen.cs" />
     <Compile Include="Controller\WebViewScreen.cs" />
     <Compile Include="Controller\YandexScreen.cs" />

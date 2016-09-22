@@ -45,6 +45,7 @@ namespace Test
         private void ID_OnClick(object sender, EventArgs e)
         {
             DConsole.WriteLine(string.Format(_webMapGoogle.Id));
+            
         }
 
         private void Add_WebMap_OnClick(object sender, EventArgs e)
@@ -53,7 +54,8 @@ namespace Test
             _webMapGoogle.Visible = true;
             _webMapGoogle.CssClass = "WebMapGoogle";
             _webMapGoogle.Id = "ID OF WEB MAP GOOGLE";
-            _webMapGoogle.AddMarker("marker", GPS.CurrentLocation.Latitude, GPS.CurrentLocation.Longitude, "red");
+            _webMapGoogle.AddMarker("marker", 59.753271, 30.321083, "red");
+            _webMapGoogle.AddMarker("marker", 30.753271, 59.321083, "red");
             hl.AddChild(_webMapGoogle);
             hl.Refresh();
             vl.Refresh();
