@@ -1,6 +1,5 @@
 ﻿using System;
 using BitMobile.ClientModel3;
-using BitMobile.Common.Device.Providers;
 using ClientModel3.MD;
 
 namespace Test
@@ -26,7 +25,6 @@ namespace Test
         {
             Toast.MakeToast($"NEW MESSAGE = {message}");
             DConsole.WriteLine($"NEW MESSAGE = {message}");
-            
         }
 
         public override void OnShake()

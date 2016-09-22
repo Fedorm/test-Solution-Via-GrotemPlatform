@@ -77,8 +77,8 @@ namespace Test
 
             var request = new WebRequest();
             request.Host = "http:/192.168.0.152/";
-            request.UserName = "srm";
-            request.Password = "srm";
+            request.UserName = "sr";
+            request.Password = "sr";
             request.Timeout = "00:00:01";
             //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
             request.Get("http://192.168.0.152/bitmobile/synchro3/device/GetUserId", test);
