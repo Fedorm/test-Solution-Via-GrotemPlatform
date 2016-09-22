@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;
 using BitMobile.ClientModel3;
+using BitMobile.Common.Device.Providers;
 using ClientModel3.MD;
 
 namespace Test
@@ -9,33 +9,39 @@ namespace Test
     {
         public override void OnCreate()
         {
-
-           
             BusinessProcess.Init();
             DConsole.WriteLine(Translator.Translate("greeting"));
             try
             {
-                PushNotification.InitializePushService("http://192.168.0.152/bitmobile", "15f3904b-942b-11e5-bb64-f8a963e4bf15", "sr");
+                PushNotification.InitializePushService("http://192.168.0.152/bitmobile/synchro3",
+                    "8d3e3420-f723-11e5-80fd-902b3416d383", "srm");
             }
             catch (Exception)
             {
-                
-               DConsole.WriteLine("SOME EXCEPTION");
+                DConsole.WriteLine("SOME EXCEPTION");
             }
-            
         }
+
         public override void OnPushMessage(string message)
         {
+            Toast.MakeToast($"NEW MESSAGE = {message}");
             DConsole.WriteLine($"NEW MESSAGE = {message}");
+            
         }
+
         public override void OnShake()
-        { DConsole.WriteLine("on shake"); }
+        {
+            DConsole.WriteLine("on shake");
+        }
 
         public override void OnRestore()
-        { DConsole.WriteLine("on restore"); }
+        {
+            DConsole.WriteLine("on restore");
+        }
 
         public override void OnBackground()
-        { DConsole.WriteLine("on background"); }
+        {
+            DConsole.WriteLine("on background");
+        }
     }
-
 }

@@ -78,7 +78,7 @@ namespace Test
         {
             try
             {
-                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro3/device", "Sr", "Sr", OnSyncComplete,
+                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro3/device", "srm", "srm", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformSync OK!");
             }
