@@ -217,6 +217,17 @@ Button {
   placeholder-color: #a2a2aa;
   width: 100%;
 }
+.CssHugeMemoEdit {
+    
+    background-color: #4a4b5e;
+  color: #ffffff;
+  height: 100%;
+  margin-bottom: 0.5sp;
+  padding-left: 3sp;
+  padding-right: 3sp;
+  placeholder-color: #a2a2aa;
+  width: 100%;
+}
 
 .cats {
     background-color: #00ff00;

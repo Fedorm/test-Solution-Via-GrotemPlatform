@@ -1,64 +1,41 @@
 ﻿using System;
-using System.Text;
-using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
 
 namespace Test
 {
     public class TestBugsScreen : Screen
     {
-        VerticalLayout vl;
-        public Database db;
-      
-      
+        private MemoEdit _cssMemoEdit;
+        private VerticalLayout vl;
+
+
         public override void OnLoading()
         {
-       
             Initialize();
-            
         }
-        void Back_OnClick(object sender, EventArgs e)
+
+        private void Back_OnClick(object sender, EventArgs e)
         {
             BusinessProcess.DoBack();
         }
+
         private void Initialize()
         {
-          vl = new VerticalLayout();
+            vl = new VerticalLayout();
             AddChild(vl);
 
-
-            new T().Start();
-            new T().Start();
-
-
-
-            vl.AddChild(new Button("Back", Back_OnClick));
-    
+            _cssMemoEdit = new MemoEdit();
+            _cssMemoEdit.CssClass = "CssHugeMemoEdit";
+            _cssMemoEdit.Text = "CHANGE MY CSS";
+            _cssMemoEdit.Id = "ID Of Css MemoEdit";
+            var memo = new MemoEdit();
+            memo.CssClass = "CssHugeMemoEdit";
 
 
-
-
-
+            
+            //vl.AddChild(new Button("Back", Back_OnClick));
+            vl.AddChild(_cssMemoEdit);
+            //vl.AddChild(memo);
         }
-
-        internal class T : Thread
-        {
-            public override void Execute()
-            {
-                for (int i = 0; i < Int32.MaxValue; i++)
-                {
-                    DConsole.WriteLine($"i = {i}");
-                    Sleep(1000);
-                }
-            }
-
-
-      void Back_OnClick(object sender, EventArgs e)
-            {
-                BusinessProcess.DoBack();
-            }
-
-        }
-
     }
 }

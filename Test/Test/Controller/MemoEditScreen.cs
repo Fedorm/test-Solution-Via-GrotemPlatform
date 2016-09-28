@@ -42,7 +42,7 @@ namespace Test
             //            _textMemoEdit.Required = true;
 
             _placeholderMemoEdit = new MemoEdit();
-            _placeholderMemoEdit.CssClass = "MemoEdit";
+            _placeholderMemoEdit.CssClass = "CssMemoEdit";
             _placeholderMemoEdit.Placeholder = "PLACEHOLDER CHANGE MY PLACEHOLDER";
 
             _notEnabledMemoEdit = new MemoEdit();

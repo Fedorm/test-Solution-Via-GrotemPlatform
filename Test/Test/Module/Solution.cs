@@ -13,7 +13,7 @@ namespace Test
             try
             {
                 PushNotification.InitializePushService("http://192.168.0.152/bitmobile/synchro3",
-                    "8d3e3420-f723-11e5-80fd-902b3416d383", "srm");
+                    "15f3904b-942b-11e5-bb64-f8a963e4bf15", "sr");
             }
             catch (Exception)
             {
