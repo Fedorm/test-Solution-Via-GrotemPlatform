@@ -44,25 +44,26 @@ namespace Test
             db = new Database();
             db.CreateFromModel();
             DConsole.WriteLine("Initialize OK!");
-            
         }
 
         private void ClearCache(object sender, EventArgs e)
         {
             Application.ClearCache();
             DConsole.WriteLine("Cache cleared");
-            
         }
+
         private void ClearLog(object sender, EventArgs e)
         {
-           db.ClearLog();
+            db.ClearLog();
             DConsole.WriteLine("Log cleared");
-
         }
+
         private void SendDatabase(object sender, EventArgs e)
-  {
-      Application.SendDatabase("http://192.168.0.152/bitmobile/synchro3/filesystem/log", "Sr", "Sr");
-            DConsole.WriteLine("Database was sent");
+        {
+           
+                Application.SendDatabase("http://10.5.195.222/bitmobile/synchro3", "sr", "sr");
+
+            
         }
 
         private void Status(object sender, EventArgs e)
@@ -70,7 +71,6 @@ namespace Test
             DConsole.WriteLine(db.LastError);
             DConsole.WriteLine(db.SuccessSync.ToString());
             _textView.Text = db.SuccessSync.ToString();
-            
         }
 
 
@@ -78,7 +78,7 @@ namespace Test
         {
             try
             {
-                db.PerformSync(@"http://192.168.0.152/bitmobile/synchro3/device", "srm", "srm", OnSyncComplete,
+                db.PerformSync(@"http://10.5.195.222/bitmobile/synchro3/device", "srm", "srm", OnSyncComplete,
                     "sync complete");
                 DConsole.WriteLine("DbPerformSync OK!");
             }
@@ -92,9 +92,9 @@ namespace Test
         {
             try
             {
-                if(db.SyncIsActive ==false)
-                db.PerformSyncAsync(@"http://192.168.0.152/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
-                    "sync complete");
+                if (db.SyncIsActive == false)
+                    db.PerformSyncAsync(@"http://10.5.195.222/bitmobile/synchro2/device", "Sr", "Sr", OnSyncComplete,
+                        "sync complete");
                 DConsole.WriteLine("DbPerformSyncAsync OK!");
             }
             catch (Exception ex)
