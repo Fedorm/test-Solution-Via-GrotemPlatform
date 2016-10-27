@@ -54,8 +54,7 @@ namespace Test
             _webMapGoogle.Visible = true;
             _webMapGoogle.CssClass = "WebMapGoogle";
             _webMapGoogle.Id = "ID OF WEB MAP GOOGLE";
-            _webMapGoogle.AddMarker("marker", 59.753271, 30.321083, "red");
-            _webMapGoogle.AddMarker("marker", 30.753271, 59.321083, "red");
+            
             hl.AddChild(_webMapGoogle);
             hl.Refresh();
             vl.Refresh();

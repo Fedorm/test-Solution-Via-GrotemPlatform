@@ -12,6 +12,7 @@ namespace Test
             AddChild(vl);
   
             vl.AddChild(new Button("Resouce, Core Version", ResourceCoreVersion_OnClick));
+            //vl.AddChild(new Button("Reload Data", ReloadData_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
         }
 
@@ -19,6 +20,7 @@ namespace Test
         {
             BusinessProcess.DoBack();
         }
+ 
 
         internal void ResourceCoreVersion_OnClick(object sender, EventArgs e)
         {

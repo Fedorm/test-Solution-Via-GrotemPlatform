@@ -1,6 +1,7 @@
 ﻿using System;
 using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
+using ClientModel3.MD;
 
 namespace Test
 {
@@ -14,6 +15,12 @@ namespace Test
             //На следующей строчке падает.
             var isStart = GpsTracking.Start();
             Initialize();
+        }
+
+        public override void OnShow()
+        {
+            base.OnShow();
+        
         }
 
         private void Initialize()
@@ -76,16 +83,14 @@ namespace Test
             //DConsole.WriteLine("Authorization OK!");
 
             var request = new WebRequest();
-            request.Host = "http:/192.168.0.152/";
-            request.UserName = "sr";
-            request.Password = "sr";
-            request.Timeout = "00:00:01";
-            //request.Get("http://bitmobile1.bt/bitmobileX/superagent/device/GetUserId", test);
-            request.Get("http://192.168.0.152/bitmobile/synchro3/device/GetUserId", test);
-            //request.Get("http://bitmobile1.bt/bitmobile3/synchro2/device/GetUserId", test);
-
-            //request.Get("http://professorweb.ru/", test);
-
+            //request.Host = "http://10.5.195.222/";
+            request.Host = "http://10.5.195.232/";
+            request.UserName = "Ivan";
+            request.Password = "2502";
+            request.Timeout = "00:01:00";
+             //request.Get("http://10.5.195.222/bitmobile/synchro3/device/GetUserId", test);
+             request.Get("http://10.5.195.232/bitmobile/testsolution/device/GetUserId", test);
+            
 
             //var req = WebRequest.Create("http://bitmobile1.bt/bitmobileX/platform/device/GetClientMetadata");
             //DConsole.WriteLine("Web Request Created");

@@ -49,6 +49,7 @@ namespace Test
             _vl.AddChild(_cssButton);
             _vl.AddChild(_textButton);
             _vl.AddChild(new Button("Add New Button, EditText and Image", AddNewButton_OnClick));
+            _vl.AddChild(new Button("Remove", Remove_OnClick));
             _vl.AddChild(new Button("Test Dialog", AddNewDialog_OnClick));
             _vl.AddChild(new Button("Back", Back_OnClick));
             _vl.AddChild(new Button("Wait", Wait_OnClick));
@@ -73,6 +74,10 @@ namespace Test
         private void Wait_OnClick(object sender, EventArgs e)
         {
             thread.Sleep(3000);
+        }
+ private void Remove_OnClick(object sender, EventArgs e)
+        {
+            _vl.RemoveChild(5);
         }
 
         private void Snackbar_OnClick(object sender, EventArgs e)

@@ -62,7 +62,7 @@ namespace Test
         {
            
                 Application.SendDatabase("http://10.5.195.222/bitmobile/synchro3", "sr", "sr");
-
+            DConsole.WriteLine("database was sent");
             
         }
 

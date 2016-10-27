@@ -1,5 +1,8 @@
 ﻿using System;
+using BitMobile.BusinessProcess.ClientModel;
+using BitMobile.ClientModel3;
 using BitMobile.ClientModel3.UI;
+using Converter = BitMobile.ClientModel3.Converter;
 
 namespace Test
 {
@@ -28,12 +31,9 @@ namespace Test
             _cssMemoEdit.CssClass = "CssHugeMemoEdit";
             _cssMemoEdit.Text = "CHANGE MY CSS";
             _cssMemoEdit.Id = "ID Of Css MemoEdit";
-            var memo = new MemoEdit();
-            memo.CssClass = "CssHugeMemoEdit";
+            _cssMemoEdit.AutoFocus = true;
+            vl.AddChild(new Button("Back", Back_OnClick));
 
-
-            
-            //vl.AddChild(new Button("Back", Back_OnClick));
             vl.AddChild(_cssMemoEdit);
             //vl.AddChild(memo);
         }

@@ -23,7 +23,7 @@ namespace Test
 
 
             _image = new Image();
-            _image.Source = "Image\\cats.jpg";
+            _image.Source = "Image\\grotem.jpg";
             _image.CssClass = "Image";
             _image.Id = "ID Of Image";
 

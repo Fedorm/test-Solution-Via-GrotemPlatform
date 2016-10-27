@@ -33,11 +33,13 @@ namespace Test
             _cssMemoEdit.Text = "CHANGE MY CSS";
             _cssMemoEdit.Id = "ID Of Css MemoEdit";
 
+            _cssMemoEdit.SetFocus();
+
             _textMemoEdit = new MemoEdit();
             _textMemoEdit.CssClass = "MemoEdit";
             _textMemoEdit.Text = "PLEASE CHANGE MY TEXT";
 
-            //            _textMemoEdit.AutoFocus = true;
+            //_textMemoEdit.AutoFocus = true;
             //            _textMemoEdit.Length = 2;
             //            _textMemoEdit.Required = true;
 
