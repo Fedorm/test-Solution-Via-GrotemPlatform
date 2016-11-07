@@ -21,7 +21,7 @@ namespace Test
             _webView = new WebView();
             _webView.CssClass = "WebView";
             _webView.Visible = true;
-            _webView.Url = "https://youtube.com";
+            _webView.Url = "http://правительство.рф";
 
             
 

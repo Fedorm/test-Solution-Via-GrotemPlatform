@@ -23,7 +23,7 @@ namespace Test
             _webImage.Id = "ID Of Web Image";
             _webImage.UrlType = "Absolute";
           
-            _webImage.Url = "http://goo.gl/DqSUF7";
+            _webImage.Url = "http://правительство.рф";
 
             vl.AddChild(_webImage);
             vl.AddChild(new Button("Back", Back_OnClick));

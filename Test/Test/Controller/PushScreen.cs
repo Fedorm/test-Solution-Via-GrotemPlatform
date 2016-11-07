@@ -26,6 +26,7 @@ namespace Test
 
             vl.AddChild(new Button("Push to some devices", PushMessage_OnClick));
             vl.AddChild(new Button("DegReg Push", DeRegPush_OnClick));
+            vl.AddChild(new Button("Init Push", InitializePush_OnClick));
             vl.AddChild(new Button("IsInitialized Push", IsInitializedPush_OnClick));
             vl.AddChild(new Button("Back", Back_OnClick));
             vl.AddChild(_image);
@@ -58,6 +59,19 @@ namespace Test
         {
             PushNotification.Unregister("http://10.5.195.222/bitmobile/synchro3",
                 "15f3904b-942b-11e5-bb64-f8a963e4bf15", "Sr");
+        }
+ private void InitializePush_OnClick(object sender, EventArgs e)
+ {
+            try
+            {
+                PushNotification.InitializePushService("http://10.5.195.222/bitmobile/synchro3",
+                    "15f3904b-942b-11e5-bb64-f8a963e4bf15", "Sr");
+                DConsole.WriteLine("initialized");
+            }
+            catch (Exception)
+            {
+                DConsole.WriteLine("SOME EXCEPTION");
+            }
         }
  private void IsInitializedPush_OnClick(object sender, EventArgs e)
  {
